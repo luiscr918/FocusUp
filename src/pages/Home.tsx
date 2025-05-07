@@ -2,9 +2,8 @@
 const Home = () => {
   return (
     <>
-    <p>alisson crikosa</p>
-    <p>ele pe mija este es estorbo</p>
-    <p>ALISSON VAYA A LA MIHARDA</p>
+    <p>Prueba crikin</p>
+    <p>este no vale</p>
     </>
   )
 }
