@@ -2,8 +2,12 @@
 const Home = () => {
   return (
     <>
-    <p>Prueba crikin</p>
-    <p>este no vale</p>
+ <div className="h-screen flex justify-center items-center">
+      <button className="bg-blue-500 text-white py-3 px-5 shadow-md ">
+        SELECCIONA
+      </button>
+    </div>
+
     </>
   )
 }
