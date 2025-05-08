@@ -10,7 +10,7 @@
 .night_no_stars {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: relative; /* Asegura que no interfiera con otros elementos */
-  z-index: -1; /* Envía el fondo detrás del contenido del componente */
+  z-index: 1; /* Envía el fondo detrás del contenido del componente */
 }
 
 .night {
@@ -25,6 +25,8 @@
   width: 100%; /* Mantiene el ancho completo */
   height: 100%; /* Mantiene la altura completa */
   overflow: hidden; /* Evita que el contenido se salga del contenedor */
+  z-index: -1; /* Envía el fondo detrás del contenido */
+  pointer-events: none; /* Evita que interfiera con interacciones */
 }
 
 .shooting_star {

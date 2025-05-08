@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { NightSky } from "../components/NightSky";
 import "../styles/fondoNoche.css";
 
@@ -47,10 +48,11 @@ const Home = () => {
         justifyContent: "center",
         height: "100vh",
       }} >
-        <a href="#" className="block max-w-sm p-6 bg-transparent border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark dark:border-gray-700 dark:hover:bg-gray-700">
+        <a href="#" className="block bg-transparent  max-w-sm p-6  border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 ">
 
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
+          <p className="font-normal text-teal-300">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+           <Link to={'/hola'}>Ir</Link>
         </a>
       </div>
 
