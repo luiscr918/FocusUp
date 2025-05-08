@@ -1,6 +1,19 @@
+import '../styles/fondoNoche.css';
+interface Props {
+    showModal: boolean;
+    cerrarModal: ()=> void; 
 
-export const ModalHomeComponent = () => {
+}
+export const ModalHomeComponent = ({showModal}:Props) => {
   return (
-    <div>ModalHomeComponent</div>
+    (showModal
+        ?
+        <div>
+        
+        ModalHomeComponent</div>
+        :
+        <p>error</p>
+    )
+
   )
 }
