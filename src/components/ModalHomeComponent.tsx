@@ -4,16 +4,12 @@ interface Props {
     cerrarModal: ()=> void; 
 
 }
-export const ModalHomeComponent = ({showModal}:Props) => {
+export const ModalHomeComponent = ({showModal, cerrarModal}: Props) => {
   return (
-    (showModal
-        ?
-        <div>
-        
-        ModalHomeComponent</div>
-        :
-        <p>error</p>
+    showModal && (
+      <div>
+        ModalHomeComponent
+      </div>
     )
-
-  )
+  );
 }
