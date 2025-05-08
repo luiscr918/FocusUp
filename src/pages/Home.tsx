@@ -52,7 +52,8 @@ const Home = () => {
 
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
           <p className="font-normal text-teal-300">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-           <Link to={'/hola'}>Ir</Link>
+          <Link to={'/hola'}>Ir</Link>
+          <p>ele pe mija no detecta pipipi</p>
         </a>
       </div>
 
