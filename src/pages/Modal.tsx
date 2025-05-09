@@ -1,22 +1,25 @@
-import { Link } from 'react-router-dom'
 import ModalComponentConfirmar from '../components/ModalComponentConfirmar'
 
 const Modal = () => {
   return (
     <div>
-      <Link to="/Modal" className="btn btn-primary m-1" >Modales</Link>
-     <ModalComponentConfirmar
-     nombre={"modal 1"}
-     descripcion={"AJAJAJAJ"}/>
-     <ModalComponentConfirmar
-     nombre={"modal 2"}
-     descripcion={"000000"}/>
-     <ModalComponentConfirmar
-     nombre={"modal 3"}
-     descripcion={"IIIIIII"}/>
-     <ModalComponentConfirmar
-     nombre={"modal 4"}
-     descripcion={"UUUUUU"}/>
+      <ModalComponentConfirmar
+        nombre={"CORNELL"}
+        descripcion={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, placeat cupiditate voluptatibus quam corporis illum numquam laboriosam at doloremque temporibus modi dignissimos veritatis eveniet eum in ullam, odit quibusdam quo."}
+        imagen='' />
+
+      <ModalComponentConfirmar
+        nombre={"modal 2"}
+        descripcion={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, placeat cupiditate voluptatibus quam corporis illum numquam laboriosam at doloremque temporibus modi dignissimos veritatis eveniet eum in ullam, odit quibusdam quo."}
+        imagen='' />
+      <ModalComponentConfirmar
+        nombre={"modal 3"}
+        descripcion={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, placeat cupiditate voluptatibus quam corporis illum numquam laboriosam at doloremque temporibus modi dignissimos veritatis eveniet eum in ullam, odit quibusdam quo."}
+        imagen=''/>
+      <ModalComponentConfirmar
+        nombre={"modal 4"}
+        descripcion={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, placeat cupiditate voluptatibus quam corporis illum numquam laboriosam at doloremque temporibus modi dignissimos veritatis eveniet eum in ullam, odit quibusdam quo."} 
+        imagen=''/>
     </div>
   )
 }
