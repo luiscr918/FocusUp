@@ -293,5 +293,46 @@
     transform: rotate(405deg);
   }
 }
+/*Modo claro*/
+/*Contenedor Principal*/
+.cielo_animado {
+  background: linear-gradient(
+    -45deg,
+    #007dd8,
+    #1291dd,
+    #0070c1,
+    #1180c5,
+    #ffffff
+  );
+  background-size: 400% 400%;
+  animation: animarCielo 20s ease infinite;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 
+@keyframes animarCielo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*Contenedor para elementos*/
+.cielo_animado_elementos {
+  background: linear-gradient(
+    -45deg,
+    #007dd8,
+    #1291dd,
+    #0070c1,
+    #1180c5,
+    #ffffff
+  );
+  background-size: 400% 400%;
+  animation: animarCielo 20s ease infinite;
+}
 /*# sourceMappingURL=fondoNoche.css.map */

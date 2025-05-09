@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { NightSky } from "../components/NightSky";
-import "../styles/fondoNoche.css";
+import "../styles/fondosMain.css";
+import { useState } from "react";
 
 
 const Home = () => {
-
+  const [valor, setvalor] = useState(0)
   return (
-    <div className="cuerpo_Noche">
-      <NightSky />
-      <nav className="night_no_stars border-gray-200 ">
+    <div className="cielo_animado">
+
+
+      <nav className="cielo_animado_elementos border-gray-200 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
@@ -41,24 +43,10 @@ const Home = () => {
           </div>
         </div>
       </nav>
-      {/* extra */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-      }} >
-        <a href="#" className="block bg-transparent  max-w-sm p-6  border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 ">
 
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">Noteworthy technology acquisitions 2021</h5>
-          <p className="font-normal text-teal-300">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-          <Link to={'/hola'}>Ir</Link>
-          <p>ele pe mija no detecta pipipi</p>
-        </a>
-      </div>
-
-
-
+      <img style={{ height: '100px', width: '100px' }} src="/src/assets/logitoEmpresa.png" alt="" />
+      <button type="button" onClick={() => setvalor(1)} className="text-gray-900 cielo_animado_elementos border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
+      <p className="text-6xl text-gray-900 dark:text-white">{valor}</p>
     </div>
   );
 };
