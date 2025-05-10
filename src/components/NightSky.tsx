@@ -1,5 +1,5 @@
 
-import "../styles/fondoNoche.css";
+import "../styles/fondosMain.css";
 
 export const NightSky = () => {
   const stars = Array.from({ length: 20 }, (_, i) => (

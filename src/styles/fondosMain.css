@@ -1,4 +1,4 @@
-.cuerpo_Noche {
+.cuerpo_noche {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   height: 100vh; /* Solo afecta al contenedor principal */
   overflow: hidden; /* Evita que el contenido se desborde */
@@ -11,6 +11,47 @@
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: relative; /* Asegura que no interfiera con otros elementos */
   z-index: 1; /* Envía el fondo detrás del contenido del componente */
+}
+/*Modo claro*/
+/*Contenedor Principal*/
+.cielo_animado {
+  background: linear-gradient(
+    -45deg,
+    #87ceeb 0%,
+    #a3d5ff 30%,
+    #4a90e2 70%,
+    #9bcef3 100%
+  );
+  background-size: 400% 400%;
+  animation: animarCielo 15s ease-in-out infinite;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  -webkit-animation: animarCielo 15s ease-in-out infinite;
+}
+@keyframes animarCielo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 20%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*Contenedor para elementos*/
+.cielo_animado_elementos {
+  background: linear-gradient(
+    -45deg,
+    #87ceeb 0%,
+    #a3d5ff 30%,
+    #4a90e2 70%,
+    #9bcef3 100%
+  );
+  background-size: 400% 400%;
+  animation: animarCielo 15s ease infinite;
+  -webkit-animation: animarCielo 15s ease infinite;
 }
 
 .night {
@@ -293,46 +334,5 @@
     transform: rotate(405deg);
   }
 }
-/*Modo claro*/
-/*Contenedor Principal*/
-.cielo_animado {
-  background: linear-gradient(
-    -45deg,
-    #4facfe,
-    #00c6ff,
-    #5bc0eb,
-    #00aaff,
-    #ffffff
-  );
-  background-size: 400% 400%;
-  animation: animarCielo 20s ease infinite;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
 
-@keyframes animarCielo {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-/*Contenedor para elementos*/
-.cielo_animado_elementos {
-  background: linear-gradient(
-    -45deg,
-    #4facfe,
-    #00c6ff,
-    #5bc0eb,
-    #00aaff,
-    #ffffff
-  );
-  background-size: 400% 400%;
-  animation: animarCielo 20s ease infinite;
-}
 /*# sourceMappingURL=fondoNoche.css.map */
