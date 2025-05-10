@@ -22,20 +22,29 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
 
           <ul className="space-y-4">
             <li className="flex items-center">
+
+              <button>
               <img src="https://cdn-icons-png.flaticon.com/512/7329/7329726.png" alt="Pomodoro" className="w-7 h-7 mr-4" />
               Pomodoro
+              </button>
             </li>
             <li className="flex items-center">
+              <button>
               <img src="https://img.icons8.com/ios/50/book.png" alt="Feynman" className="w-7 h-7 mr-4" />
               Feynman
+              </button>
             </li>
             <li className="flex items-center">
+              <button>
               <img src="https://cdn-icons-png.flaticon.com/512/4696/4696551.png" alt="Cornell" className="w-7 h-7 mr-4" />
               Cornell
+              </button>
             </li>
             <li className="flex items-center">
+              <button>
               <img src="https://png.pngtree.com/png-clipart/20230424/original/pngtree-mindmap-line-icon-png-image_9093594.png" alt="Mapas Mentales" className="w-7 h-7 mr-4" />
               Mapas Mentales
+              </button>
             </li>
           </ul>
         </div>
