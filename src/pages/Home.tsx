@@ -8,7 +8,7 @@ import { ToogleComponent } from '../components/ToogleComponent';
 
 
 export const Home = () => {
-  const [noche, setNoche] = useState(true);
+  const [noche, setNoche] = useState(false);
   return (
     /*  Div principal  */
     <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
