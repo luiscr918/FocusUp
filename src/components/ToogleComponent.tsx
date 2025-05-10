@@ -1,25 +1,22 @@
-import { useState } from "react"
+
+interface Props {
+    isChecked: boolean;
+    setIsChecked: (valor: boolean) => void;
+}
 
 
 
-export const ToogleComponent = () => {
-    const [isChecked, setIsChecked] = useState(false)
+export const ToogleComponent = ({ isChecked, setIsChecked }: Props) => {
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked)
-    }
     return (
         <>
             <label className='themeSwitcherThree relative inline-flex cursor-pointer select-none items-center'>
                 <input
                     type='checkbox'
                     checked={isChecked}
-                    onChange={handleCheckboxChange}
+                    onChange={() => setIsChecked(!isChecked)}
                     className='sr-only'
                 />
-                <span className='mr-[18px] text-sm font-medium text-black'>
-                    Switch Version
-                </span>
                 <div className='shadow-card flex h-[46px] w-[82px] items-center justify-center rounded-md bg-white'>
                     <span
                         className={`flex h-9 w-9 items-center justify-center rounded ${!isChecked ? 'bg-primary text-white' : 'text-body-color'
