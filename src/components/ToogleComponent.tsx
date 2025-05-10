@@ -17,7 +17,7 @@ export const ToogleComponent = ({ isChecked, setIsChecked }: Props) => {
                     onChange={() => setIsChecked(!isChecked)}
                     className='sr-only'
                 />
-                <div className={`shadow-card flex h-[46px] w-[82px] items-center justify-center rounded-md ${isChecked ? 'night_no_stars' : 'cielo_animado_elementos'}`}>
+                <div className={`shadow-card flex h-[46px] w-[82px] items-center justify-center rounded-md bg-transparent`}>
                     <span
                         className={`flex h-9 w-9 items-center justify-center rounded ${!isChecked ? 'bg-gray-200 text-black' : 'text-amber-200'
                             }`}

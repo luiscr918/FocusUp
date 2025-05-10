@@ -1,9 +1,14 @@
 import React from 'react';
 import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
+import { ToogleComponent } from './ToogleComponent';
 
 interface Nav {
     name: string;
     link: string;
+}
+interface Props {
+    isChecked: boolean;
+    setIsChecked: (valor: boolean) => void;
 }
 
 const navV: Nav[] = [
@@ -18,7 +23,7 @@ const tecnicas: Nav[] = [
     { name: 'Mapas Mentales', link: '#' },
 ];
 
-const Navegacion: React.FC = () => {
+export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
     return (
         <nav className="p-4">
             <div className="container mx-auto flex items-center justify-between">
@@ -54,8 +59,11 @@ const Navegacion: React.FC = () => {
                                 <FaSpotify className="hover:text-green-500 cursor-pointer" />
                             </a>
                         </div>
-
                     </ul>
+                </div>
+                {/* toggle para cambio de tema */}
+                <div className='ml-auto'>
+                    <ToogleComponent isChecked={isChecked} setIsChecked={setIsChecked} />
                 </div>
 
             </div>
@@ -63,4 +71,3 @@ const Navegacion: React.FC = () => {
     );
 };
 
-export default Navegacion;
