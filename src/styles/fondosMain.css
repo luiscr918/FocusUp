@@ -298,10 +298,10 @@
 .cielo_animado {
   background: linear-gradient(
     -45deg,
-    #007dd8,
-    #1291dd,
-    #0070c1,
-    #1180c5,
+    #4facfe,
+    #00c6ff,
+    #5bc0eb,
+    #00aaff,
     #ffffff
   );
   background-size: 400% 400%;
@@ -326,10 +326,10 @@
 .cielo_animado_elementos {
   background: linear-gradient(
     -45deg,
-    #007dd8,
-    #1291dd,
-    #0070c1,
-    #1180c5,
+    #4facfe,
+    #00c6ff,
+    #5bc0eb,
+    #00aaff,
     #ffffff
   );
   background-size: 400% 400%;
