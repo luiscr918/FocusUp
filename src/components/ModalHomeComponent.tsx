@@ -19,34 +19,25 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
           </div>
 
           <div className="border-b-2 border-white my-4"></div>
+<ul className="space-y-4">
+  <li className="flex items-center cursor-pointer" onClick={() => abrirModalCristopher("pomodoro")}>
+    <img src="https://cdn-icons-png.flaticon.com/512/7329/7329726.png" alt="Pomodoro" className="w-7 h-7 mr-4" />
+    Pomodoro
+  </li>
+  <li className="flex items-center cursor-pointer" onClick={() => abrirModal("feynman")}>
+    <img src="https://img.icons8.com/ios/50/book.png" alt="Feynman" className="w-7 h-7 mr-4" />
+    Feynman
+  </li>
+  <li className="flex items-center cursor-pointer" onClick={() => abrirModal("cornell")}>
+    <img src="https://cdn-icons-png.flaticon.com/512/4696/4696551.png" alt="Cornell" className="w-7 h-7 mr-4" />
+    Cornell
+  </li>
+  <li className="flex items-center cursor-pointer" onClick={() => abrirModal("mapas")}>
+    <img src="https://png.pngtree.com/png-clipart/20230424/original/pngtree-mindmap-line-icon-png-image_9093594.png" alt="Mapas Mentales" className="w-7 h-7 mr-4" />
+    Mapas Mentales
+  </li>
+</ul>
 
-          <ul className="space-y-4">
-            <li className="flex items-center">
-
-              <button>
-              <img src="https://cdn-icons-png.flaticon.com/512/7329/7329726.png" alt="Pomodoro" className="w-7 h-7 mr-4" />
-              Pomodoro
-              </button>
-            </li>
-            <li className="flex items-center">
-              <button>
-              <img src="https://img.icons8.com/ios/50/book.png" alt="Feynman" className="w-7 h-7 mr-4" />
-              Feynman
-              </button>
-            </li>
-            <li className="flex items-center">
-              <button>
-              <img src="https://cdn-icons-png.flaticon.com/512/4696/4696551.png" alt="Cornell" className="w-7 h-7 mr-4" />
-              Cornell
-              </button>
-            </li>
-            <li className="flex items-center">
-              <button>
-              <img src="https://png.pngtree.com/png-clipart/20230424/original/pngtree-mindmap-line-icon-png-image_9093594.png" alt="Mapas Mentales" className="w-7 h-7 mr-4" />
-              Mapas Mentales
-              </button>
-            </li>
-          </ul>
         </div>
       </div>
     )
