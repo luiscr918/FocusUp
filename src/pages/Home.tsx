@@ -1,29 +1,28 @@
-
 import { useState } from "react";
 import { ModalHomeComponent } from "../components/ModalHomeComponent";
+
 const Home = () => {
-  const [modalA, setModalA] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const abrirModal = () => {
-    setModalA(!modalA);
+    setShowModal(true);
+  };
+
+  const cerrarModal = () => {
+    setShowModal(false);
   };
 
   return (
-    <>
+    <div className="h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 relative">
+      <button
+        className="bg-sky-500 text-black py-3 px-5 shadow-md"
+        onClick={abrirModal}
+      >
+        SELECCIONA
+      </button>
 
-      <div className="h-screen flex justify-center items-center">
-        <button
-          className="bg-blue-500 text-white py-3 px-5 shadow-md"
-          onClick={abrirModal}
-        >
-          SELECCIONA
-        </button>
-        <ModalHomeComponent showModal={modalA} cerrarModal={abrirModal}/>
-
-      </div>
-
-
-    </>
+      <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} />
+    </div>
   );
 };
 
