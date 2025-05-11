@@ -15,7 +15,6 @@ export const Home = () => {
   const abrirModal = () => {
     setShowModal(true);
   };
-
   const cerrarModal = () => {
     setShowModal(false);
   };
