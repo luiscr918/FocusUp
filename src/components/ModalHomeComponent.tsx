@@ -1,9 +1,24 @@
+import { useState } from "react";
+import { ModalComponentConfirmar } from "./ModalComponentConfirmar";
+
 interface Props {
   showModal: boolean;
   cerrarModal: () => void;
 }
 
 export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
+  //constante para manejar el nombre de la tecnica
+  const [nombreTecnica, setNombreTecnica] = useState<string>('');
+  const [modalConfirmar, setModalConfirmar] = useState<boolean>(false);
+  /* FUNCION PARA ABIR EL MODAL DEL CRIKKO PERO DE UNA VEZ CAMBIAR EL NOMBRE */
+  const abrirModalConfirmar = (nombreTec: string) => {
+    setModalConfirmar(true);
+    setNombreTecnica(nombreTec);
+
+  }
+  const closeModalConfirman = () => {
+    setModalConfirmar(false);
+  }
   return (
     showModal && (
       <div
@@ -33,7 +48,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
           <ul className="space-y-4">
             <li
               className="flex items-center cursor-pointer"
-              onClick={() => /*abrirModalCristopher*/("pomodoro")}
+              onClick={() => abrirModalConfirmar('Pomodoro')}
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/7329/7329726.png"
@@ -44,7 +59,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
             </li>
             <li
               className="flex items-center cursor-pointer"
-              onClick={() => /*abrirModalCristopher*/("feynman")}
+              onClick={() => abrirModalConfirmar('Feynman')}
             >
               <img
                 src="https://img.icons8.com/ios/50/book.png"
@@ -55,7 +70,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
             </li>
             <li
               className="flex items-center cursor-pointer"
-              onClick={() => /*abrirModalCristopher*/("cornell")}
+              onClick={() => abrirModalConfirmar('Cornell')}
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/4696/4696551.png"
@@ -66,7 +81,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
             </li>
             <li
               className="flex items-center cursor-pointer"
-              onClick={() => /*abrirModalCristopher*/("mapas")}
+              onClick={() => abrirModalConfirmar('Mapas Mentales')}
             >
               <img
                 src="https://png.pngtree.com/png-clipart/20230424/original/pngtree-mindmap-line-icon-png-image_9093594.png"
@@ -77,6 +92,8 @@ export const ModalHomeComponent = ({ showModal, cerrarModal }: Props) => {
             </li>
           </ul>
         </div>
+        {/* Modal de confirmación */}
+        {modalConfirmar && (<ModalComponentConfirmar nombre={nombreTecnica} openModal={modalConfirmar} closeModal={closeModalConfirman} />)}
       </div>
     )
   );
