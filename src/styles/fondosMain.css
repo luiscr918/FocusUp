@@ -1,3 +1,4 @@
+/* Divs principal noche */
 .cuerpo_noche {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   height: 100vh; /* Solo afecta al contenedor principal */
@@ -7,6 +8,7 @@
   position: relative; /* Asegura que no interfiera con otros elementos */
   z-index: 0; /* Mantiene el fondo detrás de otros elementos */
 }
+/* elmentos noche*/
 .night_no_stars {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: relative; /* Asegura que no interfiera con otros elementos */
