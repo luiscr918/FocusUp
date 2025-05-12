@@ -1,7 +1,6 @@
 
 import { Route, Routes } from "react-router-dom"
-import Home from "./pages/Home"
-import { Random } from "./pages/Random"
+import { Home } from "./pages/Home"
 
 
 
@@ -11,9 +10,8 @@ function App() {
 
   return (
     <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/hola" element={<Random/>} />
-  </Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
 
   )
 }

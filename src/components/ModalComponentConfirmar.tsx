@@ -1,36 +1,51 @@
-import React, { useState } from 'react';
 
+import { useEffect, useState } from "react";
+import * as ImgsDefs from "../const/imgsDefModalConfirmar";
 interface Props {
     nombre: string,
-    descripcion: string,
-    imagen: string
+    openModal: boolean;
+    closeModal: () => void;
 }
 
-const ModalComponentConfirmar: React.FC<Props> = (props: Props) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const ModalComponentConfirmar = ({ nombre, openModal, closeModal }: Props) => {
+    const [imagen, setImagen] = useState<string>('');
+    const [definicion, setDefinicion] = useState<string>('');
+    useEffect(() => {
+        switch (nombre) {
+            case 'Pomodoro':
+                setImagen(ImgsDefs.IMGPOMODORO);
+                setDefinicion(ImgsDefs.DEFPOMODORO);
+                break;
+            case 'Feynman':
+                setImagen(ImgsDefs.IMGFEYNMAN);
+                setDefinicion(ImgsDefs.DEFFEYNMAN);
+                break;
+            case 'Cornell':
+                setImagen(ImgsDefs.IMGCORNELL);
+                setDefinicion(ImgsDefs.DEFCORNELL);
+                break;
+            case 'Mapas Mentales':
+                setImagen(ImgsDefs.IMGMENTALES);
+                setDefinicion(ImgsDefs.DEFMENTALES);
+                break;
 
-    // Función para abrir el modal
-    const openModal = () => setIsOpen(true);
+            default:
+                console.log('No se ha encontrado la técnica');
+                break;
+        }
+    }, [nombre])
 
-    // Función para cerrar el modal
-    const closeModal = () => setIsOpen(false);
+
 
     return (
         <>
-            {/* Botón para abrir modal */}
-            <button
-                onClick={openModal}
-                className="rounded-md bg-blue-500 py-2 px-4 text-white text-sm shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                type="button"
-            >
-                Abrir Modal 1
-            </button>
+
             {/* Desde aqui comienza para modificar el estilo modal */}
             {/* Modal */}
-            {isOpen && (
+            {openModal && (
                 <div
                     onClick={closeModal}
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm" 
+                    className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50"
                 >
                     <div
                         className="bg-blue-500 rounded-lg w-96 p-6 shadow-md"
@@ -38,17 +53,17 @@ const ModalComponentConfirmar: React.FC<Props> = (props: Props) => {
                     >
                         {/* Título */}
                         <div className="text-xl font-semibold text-white mb-2">
-                            {props.nombre}
+                            {nombre}
                         </div>
 
                         {/* Imagen*/}
                         <div className="flex justify-center mb-4">
-                            <img src={props.imagen} alt="imagen" className="w-24 h-24 object-cover" />
+                            <img src={imagen} alt="imagen de la tecnica" className="w-full max-w-xs h-auto object-contain" />
                         </div>
 
                         {/* Descripción */}
                         <div className="text-sm text-white mb-4">
-                            {props.descripcion}
+                            {definicion}
                         </div>
 
                         {/* Botones */}
@@ -76,4 +91,4 @@ const ModalComponentConfirmar: React.FC<Props> = (props: Props) => {
     );
 };
 
-export default ModalComponentConfirmar;
+
