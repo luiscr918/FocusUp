@@ -26,7 +26,7 @@ export const Home = () => {
       <Navegacion isChecked={noche} setIsChecked={setNoche} />
       {/*Heading Principal */}
       <div className="container mx-auto flex flex-col items-center justify-center h-screen text-center ">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">MEJORA TU ENFOQUE EN EL ESTUDIO</h1>
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight  md:text-5xl lg:text-6xl text-white">MEJORA TU ENFOQUE EN EL ESTUDIO</h1>
         <p className={`mb-6 text-lg font-normal  lg:text-xl sm:px-16 xl:px-48 ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Organiza tu tiempo, potencia tu aprendizaje y alcanza tus metas con métodos probados. ¿Listo para concentrarte de verdad?</p>
         <button
           onClick={abrirModal}
