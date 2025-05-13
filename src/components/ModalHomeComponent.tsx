@@ -26,7 +26,6 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche }: Props) => 
     showModal && (
       <div
         className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50"
-        onClick={cerrarModal} // Cierra el modal al hacer clic fuera
       >
         <div
           className={`${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'
