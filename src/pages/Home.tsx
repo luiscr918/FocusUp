@@ -8,6 +8,7 @@ import { ModalHomeComponent } from "../components/ModalHomeComponent";
 
 
 
+
 export const Home = () => {
   const [noche, setNoche] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -36,7 +37,7 @@ export const Home = () => {
         <img src="/src/assets/imgs/logoSinFondo.png" alt="icono de FocusUp" />
       </div>
       {/*Modal Seleccion de Tecnicas */}
-      <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} />
+<ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche} />
 
 
 
