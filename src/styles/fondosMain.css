@@ -1,7 +1,7 @@
 /* Divs principal noche */
 .cuerpo_noche {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  height: 100vh; /* Solo afecta al contenedor principal */
+  min-height: 100vh; /* Solo afecta al contenedor principal */
   overflow: hidden; /* Evita que el contenido se desborde */
   margin: 0; /* Elimina márgenes predeterminados */
   position: relative; /* Asegura que no interfiera con otros elementos */
@@ -25,7 +25,7 @@
   );
   background-size: 400% 400%;
   animation: animarCielo 15s ease-in-out infinite;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   overflow: hidden;
   -webkit-animation: animarCielo 15s ease-in-out infinite;
