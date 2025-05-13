@@ -5,9 +5,10 @@ interface Props {
     nombre: string,
     openModal: boolean;
     closeModal: () => void;
+    abirPrimerModal: ()=>void;
 }
 
-export const ModalComponentConfirmar = ({ nombre, openModal, closeModal }: Props) => {
+export const ModalComponentConfirmar = ({ nombre, openModal, closeModal,abirPrimerModal }: Props) => {
     const [imagen, setImagen] = useState<string>('');
     const [definicion, setDefinicion] = useState<string>('');
     useEffect(() => {
@@ -44,7 +45,7 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal }: Props
             {/* Modal */}
             {openModal && (
                 <div
-                    onClick={closeModal}
+                    onClick={() => { closeModal(); abirPrimerModal(); }}
                     className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50"
                 >
                     <div
