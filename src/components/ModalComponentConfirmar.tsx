@@ -75,7 +75,7 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
                     className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50"
                 >
                     <div
-                        className={`rounded-lg w-96 p-6 shadow-md ${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'}`}
+                        className={`rounded-lg w-125 p-6 shadow-md ${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'}`}
                         onClick={(e) => e.stopPropagation()} /* esto es para que no desaparezca el modal cuando damos click dentro de el */
                     >
                         {/* Título */}
