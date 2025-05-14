@@ -37,7 +37,7 @@ export const Home = () => {
         <img src="/src/assets/imgs/logoSinFondo.png" alt="icono de FocusUp" />
       </div>
       {/*Modal Seleccion de Tecnicas */}
-      {showModal&& <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche}  abrirModalOtraPag={abrirModal} />}
+      {showModal && <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche} abrirModalOtraPag={abrirModal} />}
 
 
 

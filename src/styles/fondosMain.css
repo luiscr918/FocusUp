@@ -11,7 +11,6 @@
 /* elmentos noche*/
 .night_no_stars {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-
   z-index: 1; /* Envía el fondo detrás del contenido del componente */
 }
 /*Modo claro*/
