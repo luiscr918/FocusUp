@@ -1,9 +1,9 @@
 /* Divs principal noche */
 .cuerpo_noche {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  height: 100vh; /* Solo afecta al contenedor principal */
+  min-height: 100vh; /* Solo afecta al contenedor principal */
+  width: 100%;
   overflow: hidden; /* Evita que el contenido se desborde */
-  font-family: "Anton", sans-serif;
   margin: 0; /* Elimina márgenes predeterminados */
   position: relative; /* Asegura que no interfiera con otros elementos */
   z-index: 0; /* Mantiene el fondo detrás de otros elementos */
@@ -11,7 +11,6 @@
 /* elmentos noche*/
 .night_no_stars {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  position: relative; /* Asegura que no interfiera con otros elementos */
   z-index: 1; /* Envía el fondo detrás del contenido del componente */
 }
 /*Modo claro*/
@@ -26,8 +25,8 @@
   );
   background-size: 400% 400%;
   animation: animarCielo 15s ease-in-out infinite;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   overflow: hidden;
   -webkit-animation: animarCielo 15s ease-in-out infinite;
 }

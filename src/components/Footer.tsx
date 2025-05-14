@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const defaultFooterLinks = [
     { label: 'Características', url: '#' },
@@ -6,20 +6,27 @@ const defaultFooterLinks = [
     { label: 'Política de privacidad', url: '#' },
 ];
 
-const Footer: React.FC = () => {
+interface FooterProps {
+    isChecked: boolean; // Prop para controlar el estado del tema
+}
+
+const Footer = ({ isChecked }: FooterProps) => {
     const currentYear = new Date().getFullYear();
     const companyName = 'FocusUp';
 
     return (
-        <footer className=" text-white py-5 fixed bottom-0 left-0 right-0 w-full z-10">
+        <footer className="py-5 w-full z-10">
             <div className="container mx-auto flex flex-col items-center justify-center">
-                
-                <ul className="flex gap-5">
+                <ul className="flex gap-5 mb-3">
                     {defaultFooterLinks.map((link) => (
                         <li key={link.label}>
                             <a
+                                className={`transition-colors ${
+                                    isChecked
+                                        ? 'text-white hover:text-black'
+                                        : 'text-black hover:text-gray-700'
+                                }`}
                                 href={link.url}
-                                className="text-black hover:text-gray-700 transition-colors"
                                 aria-label={link.label}
                             >
                                 {link.label}
@@ -27,7 +34,11 @@ const Footer: React.FC = () => {
                         </li>
                     ))}
                 </ul>
-                <p className="text-sm text-black mb-3">
+                <p
+                    className={`text-sm transition-colors ${
+                        isChecked ? 'text-white' : 'text-black'
+                    }`}
+                >
                     © {currentYear} {companyName}. Todos los derechos reservados.
                 </p>
             </div>
