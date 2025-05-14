@@ -18,7 +18,7 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
                 ? (<p>hola</p>)
                 : (<>hi</>)
             }
-            <Footer />
+            <Footer isChecked={noche}/>
         </div>
 
     )
