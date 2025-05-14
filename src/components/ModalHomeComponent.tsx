@@ -31,7 +31,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche }: Props) => 
           className={`${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'
             } p-5 rounded relative w-120 h-75 border-2`}
           onClick={(e) => e.stopPropagation()} // Evita que el clic dentro del modal lo cierre
-        >
+        >   
           <div className="flex items-center justify-between">
             <img
               src={noche ? icons.IMGNB : "https://img.icons8.com/ios7/600w/handshake-heart.png"}
@@ -106,4 +106,4 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche }: Props) => 
       </div>
     )
   );
-};
+};  
