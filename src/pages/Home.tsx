@@ -5,6 +5,7 @@ import "../styles/fondosMain.css";
 import { useState } from "react";
 import { Navegacion } from '../components/Navegacion';
 import { ModalHomeComponent } from "../components/ModalHomeComponent";
+import Footer from "../components/Footer";
 
 
 
@@ -39,7 +40,7 @@ export const Home = () => {
       {/*Modal Seleccion de Tecnicas */}
       {showModal&& <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche}  abrirModalOtraPag={abrirModal} />}
 
-
+<Footer isChecked/>
 
 
 

@@ -1,6 +1,6 @@
-
 import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
 import { ToogleComponent } from './ToogleComponent';
+import { useState } from 'react';
 
 interface Nav {
     name: string;
@@ -24,6 +24,25 @@ const tecnicas: Nav[] = [
 ];
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    let timeout: NodeJS.Timeout;
+
+    const handleMouseEnter = () => {
+        clearTimeout(timeout);
+        setIsDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        timeout = setTimeout(() => {
+            setIsDropdownOpen(false);
+        }, 200); // Retraso de 200ms
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+        console.log('Dropdown state:', !isDropdownOpen);
+    };
+
     return (
         <nav className="p-4">
             <div className="container mx-auto flex items-center justify-between">
@@ -33,26 +52,43 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                         {/* Inicio */}
                         {navV.map((item) => (
                             <li key={item.name} className="hover:text-gray-700">
-                                <a className={`${isChecked ? 'text-white' : 'text-black'}`} href={item.link}>{item.name}</a>
+                                <a className={`${isChecked ? 'text-white' : 'text-black'}`} href={item.link}>
+                                    {item.name}
+                                </a>
                             </li>
                         ))}
 
                         {/* Técnicas */}
-                        <li className="relative group">
-                            <button className={`flex items-center ${isChecked ? 'text-white' : 'text-black'} hover:text-gray-700`}>
+                        <li
+                            className="relative"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <button
+                                onClick={toggleDropdown}
+                                className={`flex items-center ${isChecked ? 'text-white' : 'text-black'} hover:text-gray-700`}
+                            >
                                 Técnicas
                                 <svg className="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                 </svg>
                             </button>
-                            <ul className="absolute hidden group-hover:block bg-white text-black p-2 shadow-lg rounded mt-2 w-40 z-10">
+                            <ul
+                                className={`absolute bg-white text-black p-2 shadow-lg rounded mt-2 w-40 z-10 ${
+                                    isDropdownOpen ? 'block' : 'hidden'
+                                }`}
+                                onClick={(e) => e.stopPropagation()}
+                            >
                                 {tecnicas.map((tech) => (
                                     <li key={tech.name} className="p-1 hover:bg-gray-100 rounded-md">
-                                        <a className="text-black" href={tech.link}>{tech.name}</a>
+                                        <a className="text-black" href={tech.link}>
+                                            {tech.name}
+                                        </a>
                                     </li>
                                 ))}
                             </ul>
                         </li>
+
                         {/* Ícono de Spotify */}
                         <div className={`${isChecked ? 'text-white' : 'text-black'} text-2xl`}>
                             <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
@@ -62,12 +98,10 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     </ul>
                 </div>
                 {/* toggle para cambio de tema */}
-                <div className='ml-auto'>
+                <div className="ml-auto">
                     <ToogleComponent isChecked={isChecked} setIsChecked={setIsChecked} />
                 </div>
-
             </div>
         </nav>
     );
 };
-
