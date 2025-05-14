@@ -1,14 +1,17 @@
 
 import { useEffect, useState } from "react";
 import * as ImgsDefs from "../const/imgsDefModalConfirmar";
+import "../styles/fondosMain.css";
+import { useNavigate } from "react-router-dom";
 interface Props {
     nombre: string,
     openModal: boolean;
     closeModal: () => void;
-    abirPrimerModal: ()=>void;
+    abirPrimerModal: () => void;
+    noche: boolean;
 }
 
-export const ModalComponentConfirmar = ({ nombre, openModal, closeModal,abirPrimerModal }: Props) => {
+export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPrimerModal, noche}: Props) => {
     const [imagen, setImagen] = useState<string>('');
     const [definicion, setDefinicion] = useState<string>('');
     useEffect(() => {
@@ -34,7 +37,30 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal,abirPrim
                 console.log('No se ha encontrado la técnica');
                 break;
         }
-    }, [nombre])
+    }, [nombre]);
+    //redireecionar a la pagina de la tecnica seleccionada
+    //1.Usar useNavigate para navegar entre paginas
+    const navigate = useNavigate();
+    const abrirPaginaTcSelec = (nombre: string) => {
+        switch (nombre) {
+            case 'Pomodoro':
+                navigate('/pomodoro');
+                break;
+            case 'Feynman':
+                navigate('/feynman');
+                break;
+            case 'Cornell':
+                navigate('/cornell');
+                break;
+            case 'Mapas Mentales':
+                navigate('/mapas-mentales');
+                break;
+
+            default:
+                console.log('No se ha encontrado la técnica');
+                break;
+        }
+    }
 
 
 
@@ -49,7 +75,7 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal,abirPrim
                     className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50"
                 >
                     <div
-                        className="bg-blue-500 rounded-lg w-96 p-6 shadow-md"
+                        className={`rounded-lg w-96 p-6 shadow-md ${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'}`}
                         onClick={(e) => e.stopPropagation()} /* esto es para que no desaparezca el modal cuando damos click dentro de el */
                     >
                         {/* Título */}
@@ -63,22 +89,22 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal,abirPrim
                         </div>
 
                         {/* Descripción */}
-                        <div className="text-sm text-white mb-4">
+                        <div className={`text-sm  mb-4 ${noche ? 'text-white' : 'text-black'}`}>
                             {definicion}
                         </div>
 
                         {/* Botones */}
-                        <div className="flex justify-between">
+                        <div className="flex justify-between ">
                             <button
                                 onClick={closeModal}
-                                className="text-white hover:text-blue-600"
+                                className={`${noche ? 'text-teal-400 hover:text-teal-500' : 'text-white hover:text-blue-600'} cursor-pointer `}
                                 type="button"
                             >
                                 CONOCER MÁS
                             </button>
                             <button
-                                onClick={closeModal}
-                                className="text-white hover:text-blue-600"
+                                onClick={() => abrirPaginaTcSelec(nombre)}
+                                className={` ${noche ? 'text-teal-400 hover:text-teal-500' : 'text-white hover:text-blue-600'} cursor-pointer`}
                                 type="button"
                             >
                                 IR AHORA

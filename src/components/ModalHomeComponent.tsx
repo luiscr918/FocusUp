@@ -104,7 +104,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche,abrirModalOtr
         </div>
         {/* Modal de confirmación */}
         {modalConfirmar && 
-        ((<ModalComponentConfirmar nombre={nombreTecnica} openModal={modalConfirmar} closeModal={closeModalConfirman}  abirPrimerModal={abrirModalOtraPag} /> ) )}
+        ((<ModalComponentConfirmar nombre={nombreTecnica} openModal={modalConfirmar} closeModal={closeModalConfirman}  abirPrimerModal={abrirModalOtraPag} noche={noche}  /> ) )}
       </div>
     )
   );
