@@ -7,9 +7,10 @@ interface Props {
   showModal: boolean;
   cerrarModal: () => void;
   noche: boolean;
+  abrirModalOtraPag:()=>void;
 }
 
-export const ModalHomeComponent = ({ showModal, cerrarModal, noche }: Props) => {
+export const ModalHomeComponent = ({ showModal, cerrarModal, noche,abrirModalOtraPag }: Props) => {
   //constante para manejar el nombre de la tecnica
   const [nombreTecnica, setNombreTecnica] = useState<string>('');
   const [modalConfirmar, setModalConfirmar] = useState<boolean>(false);
@@ -102,7 +103,8 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche }: Props) => 
           </ul>
         </div>
         {/* Modal de confirmación */}
-        {modalConfirmar && (<ModalComponentConfirmar nombre={nombreTecnica} openModal={modalConfirmar} closeModal={closeModalConfirman} />)}
+        {modalConfirmar && 
+        ((<ModalComponentConfirmar nombre={nombreTecnica} openModal={modalConfirmar} closeModal={closeModalConfirman}  abirPrimerModal={abrirModalOtraPag} noche={noche}  /> ) )}
       </div>
     )
   );
