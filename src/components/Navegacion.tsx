@@ -1,6 +1,7 @@
 import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
 import { ToogleComponent } from './ToogleComponent';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Nav {
     name: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const navV: Nav[] = [
     { name: 'Inicio', link: '/' },
-    { name: 'Sobre Nosotros', link: '#' },
+    { name: 'Sobre Nosotros', link: '/sobre-nosotros' },
 ];
 
 const tecnicas: Nav[] = [
@@ -96,14 +97,14 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
 
                     {/* Ícono de Spotify */}
                     <li className="flex-shrink-0">
-                        <a
-                            href="https://spotify.com"
+                        <Link
+                            to="/spotify"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-2xl hover:text-green-500"
                         >
                             <FaSpotify />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 

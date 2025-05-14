@@ -5,6 +5,8 @@ import { Pomodoro } from "./pages/Pomodoro"
 import { Feynman } from "./pages/Feynman"
 import { Cornell } from "./pages/Cornell"
 import { MapasMentales } from "./pages/MapasMentales"
+import { Aboutus } from "./pages/Aboutus"
+import { Spotify } from "./pages/Spotify"
 
 
 
@@ -19,6 +21,8 @@ function App() {
       <Route path="/feynman" element={<Feynman />} />
       <Route path="/cornell" element={<Cornell />} />
       <Route path="/mapas-mentales" element={<MapasMentales />} />
+      <Route path="/sobre-nosotros" element={<Aboutus />} />
+      <Route path="/spotify" element={<Spotify />} />
     </Routes>
 
   )
