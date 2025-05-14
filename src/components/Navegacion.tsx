@@ -65,7 +65,6 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                 <div className='ml-auto'>
                     <ToogleComponent isChecked={isChecked} setIsChecked={setIsChecked} />
                 </div>
-
             </div>
         </nav>
     );
