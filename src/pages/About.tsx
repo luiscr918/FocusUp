@@ -2,6 +2,7 @@
 
 export const About = () => {
   return (
-    <div>About</div>
+    <p>About</p>
   )
 }
+

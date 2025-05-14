@@ -36,7 +36,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                                 <a className={`${isChecked ? 'text-white' : 'text-black'}`} href={item.link}>{item.name}</a>
                             </li>
                         ))}
-
+                        
                         {/* Técnicas */}
                         <li className="relative group">
                             <button className={`flex items-center ${isChecked ? 'text-white' : 'text-black'} hover:text-gray-700`}>
