@@ -12,15 +12,15 @@ interface Props {
 }
 
 const navV: Nav[] = [
-    { name: 'Inicio', link: '#' },
+    { name: 'Inicio', link: '/' },
     { name: 'Sobre Nosotros', link: '#' },
 ];
 
 const tecnicas: Nav[] = [
-    { name: 'Pomodoro', link: '#' },
-    { name: 'Feynman', link: '#' },
-    { name: 'Cornell', link: '#' },
-    { name: 'Mapas Mentales', link: '#' },
+    { name: 'Pomodoro', link: '/pomodoro' },
+    { name: 'Feynman', link: '/feynman' },
+    { name: 'Cornell', link: '/cornell' },
+    { name: 'Mapas Mentales', link: 'mapas-mentales' },
 ];
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
@@ -118,4 +118,3 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
         </nav>
     );
 };
-
