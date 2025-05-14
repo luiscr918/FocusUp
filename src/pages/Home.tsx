@@ -40,7 +40,7 @@ export const Home = () => {
       {/*Modal Seleccion de Tecnicas */}
       {showModal&& <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche}  abrirModalOtraPag={abrirModal} />}
 
-<Footer isChecked/>
+
 
 
 
