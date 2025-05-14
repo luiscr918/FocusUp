@@ -25,35 +25,29 @@ const tecnicas: Nav[] = [
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleDropdown = () => {
         setIsDropdownOpen((prev) => !prev);
     };
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen((prev) => !prev);
-    };
-
     return (
         <nav className="p-4 text-white">
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative">
+            <div className="container mx-auto flex flex-wrap items-center justify-between">
                 {/* Logo */}
-                <div className="text-2xl font-bold mb-4 lg:mb-0">FocusUp</div>
+                <div className="text-2xl font-bold flex-shrink-0">FocusUp</div>
 
                 {/* Menú principal */}
-                <ul
-                    className={`flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-8 ${
-                        isMobileMenuOpen ? 'block' : 'hidden lg:flex'
-                    }`}
-                >
+                <ul className="flex flex-wrap items-center justify-center space-x-4 md:space-x-8">
                     {/* Inicio y Sobre Nosotros */}
                     {navV.map((item) => (
                         <li
                             key={item.name}
                             className="hover:text-gray-400 text-center"
                         >
-                            <a href={item.link} className="block py-2">
+                            <a
+                                href={item.link}
+                                className="block py-2"
+                            >
                                 {item.name}
                             </a>
                         </li>
@@ -63,7 +57,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     <li className="relative group text-center">
                         <button
                             onClick={toggleDropdown}
-                            className="flex items-center justify-center hover:text-gray-400 w-full"
+                            className="flex items-center justify-center hover:text-gray-400"
                         >
                             Técnicas
                             <svg
@@ -74,21 +68,19 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                             </svg>
                         </button>
                         <ul
-                            className={`absolute left-1/2 transform -translate-x-1/2 mt-2 ${
+                            className={`absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 mt-2 ${
                                 isChecked
-                                    ? 'bg-gray-800 text-gray-200 night_no_stars' // Modo oscuro
-                                    : 'bg-blue-100 text-gray-800 cielo_animado_elementos' // Modo claro
-                            } rounded-lg shadow-lg w-56 z-10 ${ // Cambié z-50 a z-10
-                                isDropdownOpen ? 'block' : 'hidden'
-                            }`}
+                                    ? 'bg-gray-800 text-gray-200 night_no_stars'
+                                    : 'bg-blue-100 text-gray-800 cielo_animado_elementos'
+                            } shadow-lg w-full lg:w-56 ${isDropdownOpen ? 'block' : 'hidden'}`}
                         >
                             {tecnicas.map((tech) => (
                                 <li
                                     key={tech.name}
                                     className={`p-3 rounded-lg text-center transition duration-300 ${
                                         isChecked
-                                            ? 'hover:bg-gray-700' // Hover en modo oscuro
-                                            : 'hover:bg-blue-200' // Hover en modo claro
+                                            ? 'hover:bg-gray-700'
+                                            : 'hover:bg-blue-200'
                                     }`}
                                 >
                                     <a
@@ -103,7 +95,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     </li>
 
                     {/* Ícono de Spotify */}
-                    <li>
+                    <li className="flex-shrink-0">
                         <a
                             href="https://spotify.com"
                             target="_blank"
@@ -116,7 +108,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                 </ul>
 
                 {/* Toggle para cambio de tema */}
-                <div className="hidden lg:block">
+                <div>
                     <ToogleComponent
                         isChecked={isChecked}
                         setIsChecked={setIsChecked}
