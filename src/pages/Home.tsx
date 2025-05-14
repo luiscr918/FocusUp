@@ -5,7 +5,6 @@ import "../styles/fondosMain.css";
 import { useState } from "react";
 import { Navegacion } from '../components/Navegacion';
 import { ModalHomeComponent } from "../components/ModalHomeComponent";
-import Footer from "../components/Footer";
 
 
 

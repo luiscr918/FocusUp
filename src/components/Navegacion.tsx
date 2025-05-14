@@ -25,22 +25,9 @@ const tecnicas: Nav[] = [
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    let timeout: NodeJS.Timeout;
-
-    const handleMouseEnter = () => {
-        clearTimeout(timeout);
-        setIsDropdownOpen(true);
-    };
-
-    const handleMouseLeave = () => {
-        timeout = setTimeout(() => {
-            setIsDropdownOpen(false);
-        }, 200); // Retraso de 200ms
-    };
 
     const toggleDropdown = () => {
         setIsDropdownOpen((prev) => !prev);
-        console.log('Dropdown state:', !isDropdownOpen);
     };
 
     return (
@@ -59,11 +46,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                         ))}
 
                         {/* Técnicas */}
-                        <li
-                            className="relative"
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
+                        <li className="relative">
                             <button
                                 onClick={toggleDropdown}
                                 className={`flex items-center ${isChecked ? 'text-white' : 'text-black'} hover:text-gray-700`}
@@ -73,20 +56,17 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                 </svg>
                             </button>
-                            <ul
-                                className={`absolute bg-white text-black p-2 shadow-lg rounded mt-2 w-40 z-10 ${
-                                    isDropdownOpen ? 'block' : 'hidden'
-                                }`}
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                {tecnicas.map((tech) => (
-                                    <li key={tech.name} className="p-1 hover:bg-gray-100 rounded-md">
-                                        <a className="text-black" href={tech.link}>
-                                            {tech.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
+                            {isDropdownOpen && (
+                                <ul className="absolute bg-white text-black p-2 shadow-lg rounded mt-2 w-40 z-10">
+                                    {tecnicas.map((tech) => (
+                                        <li key={tech.name} className="p-1 hover:bg-gray-100 rounded-md">
+                                            <a className="text-black" href={tech.link}>
+                                                {tech.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
 
                         {/* Ícono de Spotify */}
