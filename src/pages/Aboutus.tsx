@@ -26,6 +26,9 @@ export const Aboutus = () => {
                             Desde los curadores que seleccionan cuidadosamente cada cuadro hasta los asesores que te guiarán con calidez y profesionalismo, trabajamos juntos para ofrecer una colección diversa que incluye desde arte clásico hasta piezas contemporáneas. Nuestra misión es crear un espacio donde el talento de artistas emergentes y consagrados pueda ser valorado y apreciado.
                             Creemos que el arte tiene el poder de enriquecer la vida, y estamos aquí para ayudarte a descubrir la pieza perfecta que resuene contigo. Porque detrás de cada obra, hay no solo un artista, sino un equipo comprometido con el amor por el arte.</p>
                     </div>
+                    <button>
+                        IR AL INICIO
+                    </button>
                     <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                         <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                             <div className="flex flex-col-reverse gap-1">
