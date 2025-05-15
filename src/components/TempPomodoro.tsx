@@ -6,8 +6,16 @@ export const TempPomodoro = () => {
     const [enDescanso, setEnDescanso] = useState(false); // Indica si es tiempo de descanso o trabajo
     const [pausado, setPausado] = useState(false); // Indica si el temporizador está pausado
     const [ciclosCompletados, setCiclosCompletados] = useState(0); // Contador de ciclos completados
+    const [mostrarModal, setMostrarModal] = useState(false); // Tiempo restante en segundos 
+    const [mostrarFelicitacion, setMostrarFelicitacion] = useState(false);
+    useEffect(() => {
+        if (ciclosCompletados === 4) {
+            setMostrarModal(true);
+        }
+    }, [ciclosCompletados]);
 
     useEffect(() => {
+
         if (!crono) return;
 
         const temporizador = setTimeout(() => {
@@ -22,15 +30,15 @@ export const TempPomodoro = () => {
                     setTiempo(25 * 60);
                 } else {
                     if (ciclosCompletados < 4) {
-                    setCiclosCompletados((prev) => prev + 1);
+                        setCiclosCompletados((prev) => prev + 1);
 
-                    if ((ciclosCompletados + 1) % 4 === 0) {
-                        setTiempo(15 * 60);
-                    } else {
-                        setTiempo(5 * 60);
+                        if ((ciclosCompletados + 1) % 4 === 0) {
+                            setTiempo(15 * 60);
+                        } else {
+                            setTiempo(5 * 60);
+                        }
+                        setEnDescanso(true);
                     }
-                    setEnDescanso(true);
-                }
                 }
             }
         }, 1000);
@@ -54,15 +62,15 @@ export const TempPomodoro = () => {
             setTiempo(25 * 60);
         } else {
             if (ciclosCompletados < 4) {
-            setCiclosCompletados((prev) => prev + 1);
+                setCiclosCompletados((prev) => prev + 1);
 
-            if ((ciclosCompletados + 1) % 4 === 0) {
-                setTiempo(15 * 60);
-            } else {
-                setTiempo(5 * 60);
+                if ((ciclosCompletados + 1) % 4 === 0) {
+                    setTiempo(15 * 60);
+                } else {
+                    setTiempo(5 * 60);
+                }
+                setEnDescanso(true);
             }
-            setEnDescanso(true);
-        }
         }
     };
 
@@ -135,6 +143,49 @@ export const TempPomodoro = () => {
                     Terminar Ciclo
                 </button>
             </div>
+            {mostrarModal && (
+                <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
+                    <div className="bg-white p-8 rounded shadow-lg text-black">
+                        <h2 className="text-xl mb-4">¿La tarea está terminada?</h2>
+                        <button
+                            className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+                            onClick={() => {
+                                setMostrarModal(false);
+                                setMostrarFelicitacion(true);
+                            }}
+                        >
+                            Sí
+                        </button>
+                        <button
+                            className="bg-red-500 text-white px-4 py-2 rounded"
+                            onClick={() => {
+                                setMostrarModal(false);
+                                setCrono(false);
+                                setPausado(false);
+                                setEnDescanso(false);
+                                setTiempo(25 * 60); // Reinicia el ciclo de trabajo
+                                setCiclosCompletados(0);
+                            }}
+                        >
+                            No
+                        </button>
+                    </div>
+                </div>
+            )}
+            {mostrarFelicitacion && (
+                <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
+                    <div className="bg-white p-8 rounded shadow-lg text-black">
+                        <h2 className="text-2xl mb-4">¡Felicitaciones!</h2>
+                        <p>Has completado tu tarea con éxito.</p>
+                        <button
+                            className="bg-blue-400 text-white px-4 py-2 rounded mt-4"
+                            onClick={() => setMostrarFelicitacion(false)}
+                        >
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
