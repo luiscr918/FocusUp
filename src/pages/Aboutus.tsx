@@ -57,8 +57,8 @@ export const Aboutus = () => {
                     <div className="max-w-xl">
                         <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
                         <p className="mt-6 text-lg/8 text-white">Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
-                            Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
-                            Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
+                        Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
+                        Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
                     </div>
                     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-10 xl:col-span-2">
                         <li>
