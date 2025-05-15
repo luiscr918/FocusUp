@@ -1,6 +1,7 @@
 import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
 import { ToogleComponent } from './ToogleComponent';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Nav {
     name: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const navV: Nav[] = [
     { name: 'Inicio', link: '/' },
-    { name: 'Sobre Nosotros', link: '#' },
+    { name: 'Sobre Nosotros', link: '/sobre-nosotros' },
 ];
 
 const tecnicas: Nav[] = [
@@ -68,20 +69,18 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                             </svg>
                         </button>
                         <ul
-                            className={`absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 mt-2 ${
-                                isChecked
+                            className={`absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 mt-2 ${isChecked
                                     ? 'bg-gray-800 text-gray-200 night_no_stars'
                                     : 'bg-blue-100 text-gray-800 cielo_animado_elementos'
-                            } shadow-lg w-full lg:w-56 ${isDropdownOpen ? 'block' : 'hidden'}`}
+                                } shadow-lg w-full lg:w-56 ${isDropdownOpen ? 'block' : 'hidden'}`}
                         >
                             {tecnicas.map((tech) => (
                                 <li
                                     key={tech.name}
-                                    className={`p-3 rounded-lg text-center transition duration-300 ${
-                                        isChecked
+                                    className={`p-3 rounded-lg text-center transition duration-300 ${isChecked
                                             ? 'hover:bg-gray-700'
                                             : 'hover:bg-blue-200'
-                                    }`}
+                                        }`}
                                 >
                                     <a
                                         href={tech.link}
@@ -96,14 +95,13 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
 
                     {/* Ícono de Spotify */}
                     <li className="flex-shrink-0">
-                        <a
-                            href="https://spotify.com"
-                            target="_blank"
+                        <Link
+                            to="/spotify"
                             rel="noopener noreferrer"
                             className="text-2xl hover:text-green-500"
                         >
                             <FaSpotify />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 
