@@ -3,11 +3,12 @@ import { Navegacion } from "../components/Navegacion";
 import { NightSky } from "../components/NightSky";
 import "../styles/fondosMain.css";
 import Footer from "../components/Footer";
+import { TempPomodoro } from "../components/TempPomodoro";
 interface Props {
     tarea?: string;
 }
 
-export const Pomodoro = ({ tarea = '' }: Props) => {
+export const Pomodoro = ({ tarea = 'jfjfj' }: Props) => {
     const [noche, setNoche] = useState(false);
     return (
         <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
@@ -16,9 +17,9 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             {(tarea === '')
                 ? (<p>hola</p>)
-                : (<>hi</>)
+                : (<TempPomodoro />)
             }
-            <Footer isChecked={noche}/>
+            <Footer isChecked={noche} />
         </div>
 
     )
