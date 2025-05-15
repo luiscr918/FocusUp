@@ -19,11 +19,11 @@ export const Spotify = () => {
       Concentrate estuchando tu PlayList favorita mientras estudias con FocusUp.
     </p>
     <div className="flex flex-col sm:flex-row gap-4">
-      <a href="https://open.spotify.com/intl-es/?_authfailed=1" className="flex items-center gap-2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full transition-all">
+      <a href="https://open.spotify.com/intl-es/?_authfailed=1" target="_blank" className="flex items-center gap-2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full transition-all">
         <img src="/src/assets/imgs/iconS.png" alt="Spotify" className="w-5 h-5" />
         Ir a Spotify
       </a>
-      <a href="https://www.youtube.com" className="flex items-center gap-2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full transition-all">
+      <a href="https://www.youtube.com" target="_blank" className="flex items-center gap-2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full transition-all">
         <img src="/src/assets/imgs/iconY.png" alt="YouTube" className="w-5 h-5" />
         Ir a YouTube Play
       </a>
