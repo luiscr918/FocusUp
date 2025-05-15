@@ -36,74 +36,68 @@ export const Aboutus = () => {
                                 <dd className="text-4xl font-semibold tracking-tight text-white">4</dd>
                             </div>
                             <div className="flex flex-col-reverse gap-1">
-                                <dt className="text-base/7 text-gray-300">Nuestros Cuadros</dt>
-                                <dd className="text-4xl font-semibold tracking-tight text-white">550+</dd>
+                                <dt className="text-base/7 text-gray-300">Nuestros Usuarios</dt>
+                                <dd className="text-4xl font-semibold tracking-tight text-white">1000+</dd>
                             </div>
                             <div className="flex flex-col-reverse gap-1">
-                                <dt className="text-base/7 text-gray-300">Ganadores de Premios</dt>
-                                <dd className="text-4xl font-semibold tracking-tight text-white">5</dd>
+                                <dt className="text-base/7 text-gray-300">En Sitios Mas Utilizados</dt>
+                                <dd className="text-4xl font-semibold tracking-tight text-white">#3</dd>
                             </div>
                             <div className="flex flex-col-reverse gap-1">
-                                <dt className="text-base/7 text-gray-300">El Museo del Louvre</dt>
-                                <dd className="text-4xl font-semibold tracking-tight text-white">Reconocimiento</dd>
+                                <dt className="text-base/7 text-gray-300">Fácil y sencilla</dt>
+                                <dd className="text-4xl font-semibold tracking-tight text-white">Accesibilidad</dd>
                             </div>
                         </dl>
                     </div>
                 </div>
     </section>                  
-            
+            {/* Sección de equipo */}
             <div className={`py-24 sm:py-32 ${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
                 <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
                     <div className="max-w-xl">
                         <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
-                        <p className="mt-6 text-lg/8 text-white">We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.</p>
+                        <p className="mt-6 text-lg/8 text-white">Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
+                                                                    Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
+                                                                    Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
                     </div>
                     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-10 xl:col-span-2">
                         <li>
                             <div className="flex items-center gap-x-6">
                                 <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
+                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Luis Castillo</h3>
+                                    <p className="text-sm/6 font-semibold text-white">Scrum Master</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div className="flex items-center gap-x-6">
                                 <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
+                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Alisson Guapulema</h3>
+                                    <p className="text-sm/6 font-semibold text-white">Desarrollador / Tester</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div className="flex items-center gap-x-6">
                                 <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
+                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Andres Falcon</h3>
+                                    <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div className="flex items-center gap-x-6">
                                 <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
+                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Cristopher Chasiloa</h3>
+                                    <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div className="flex items-center gap-x-6">
                                 <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Leslie Alexander</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Co-Founder / CEO</p>
+                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Jean Carlos Itaz</h3>
+                                    <p className="text-sm/6 font-semibold text-white">Desarrollador / Diseñador</p>
                                 </div>
                             </div>
                         </li>
