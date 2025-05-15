@@ -21,17 +21,16 @@ export const TempPomodoro = () => {
                     setEnDescanso(false);
                     setTiempo(25 * 60);
                 } else {
-                    // Si estaba en trabajo, incrementa el contador de ciclos
+                    if (ciclosCompletados < 4) {
                     setCiclosCompletados((prev) => prev + 1);
 
-                    // Si se completaron 4 ciclos, establece un descanso largo
                     if ((ciclosCompletados + 1) % 4 === 0) {
-                        setTiempo(15 * 60); // Descanso largo
+                        setTiempo(15 * 60);
                     } else {
-                        setTiempo(5 * 60); // Descanso corto
+                        setTiempo(5 * 60);
                     }
-
                     setEnDescanso(true);
+                }
                 }
             }
         }, 1000);
@@ -54,17 +53,16 @@ export const TempPomodoro = () => {
             setEnDescanso(false);
             setTiempo(25 * 60);
         } else {
-            // Si está en trabajo, incrementa el contador de ciclos
+            if (ciclosCompletados < 4) {
             setCiclosCompletados((prev) => prev + 1);
 
-            // Si se completaron 4 ciclos, establece un descanso largo
             if ((ciclosCompletados + 1) % 4 === 0) {
-                setTiempo(15 * 60); // Descanso largo
+                setTiempo(15 * 60);
             } else {
-                setTiempo(5 * 60); // Descanso corto
+                setTiempo(5 * 60);
             }
-
             setEnDescanso(true);
+        }
         }
     };
 
