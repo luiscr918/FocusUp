@@ -21,7 +21,7 @@ export const Aboutus = () => {
                                 <p className="text-white text-base font-normal leading-relaxed lg:text-start text-justify">FocusUp es un gestor de estudio diseñado para optimizar el aprendizaje combinando metodologías efectivas como Pomodoro, Feynman, el método Cornell y mapas mentales. Esta herramienta ayuda a los estudiantes a organizar su tiempo y contenido de forma eficiente: con Pomodoro mejora la concentración mediante sesiones temporizadas; el método Feynman promueve la comprensión profunda al explicar conceptos con palabras simples; Cornell facilita la toma de apuntes estructurada;
                                     y los mapas mentales permiten visualizar y conectar ideas de manera clara. FocusUp integra estas técnicas en una sola plataforma para potenciar el rendimiento académico.</p>
                             </div>
-                            <button className="sm:w-fit w-full px-3.5 py-2 bg-teal-400 hover:bg-teal-500 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
+                            <button className="sm:w-fit w-full px-3.5 py-2 bg-teal-400 hover:bg-teal-500 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex text-white ">
                                 <Link to="/">Ir al Inicio</Link>
                             </button>
                         </div>
@@ -52,13 +52,12 @@ export const Aboutus = () => {
                 </div>
             </section>
             {/* Sección de equipo */}
-            <div className={`py-24 sm:py-32 ${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
-                <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
+                <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
                     <div className="max-w-xl">
                         <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
                         <p className="mt-6 text-lg/8 text-white">Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
-                            Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
-                            Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
+                        Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
+                        Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
                     </div>
                     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-10 xl:col-span-2">
                         <li>
@@ -103,8 +102,8 @@ export const Aboutus = () => {
                         </li>
                     </ul>
                 </div>
+                <Footer isChecked={noche} />
             </div>
-            <Footer isChecked={noche} />
-        </div>
+            
     )
 }
