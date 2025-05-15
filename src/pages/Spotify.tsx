@@ -12,6 +12,7 @@ export const Spotify = () => {
                 {/* Barra de navegacion */}
                 <Navegacion isChecked={noche} setIsChecked={setNoche} />
                 <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}relative h-screen flex items-center justify-start bg-cover bg-center`}>
+                  
   <div className="relative z-10 px-8 sm:px-16 text-white max-w-2xl">
     <h1 className="text-4xl sm:text-5xl font-bold mb-4">Relájate escuchando tu <span className="text-white">PlayList.</span></h1>
     <p className="text-sm sm:text-base mb-6 text-gray-200">
