@@ -38,15 +38,7 @@ export const Home = () => {
       </div>
       {/*Modal Seleccion de Tecnicas */}
       {showModal && <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche} abrirModalOtraPag={abrirModal} />}
-
-
-
-
-
     </div>
-
-
-
   );
 };
 
