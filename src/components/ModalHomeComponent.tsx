@@ -14,7 +14,7 @@ export const ModalHomeComponent = ({ showModal, cerrarModal, noche,abrirModalOtr
   //constante para manejar el nombre de la tecnica
   const [nombreTecnica, setNombreTecnica] = useState<string>('');
   const [modalConfirmar, setModalConfirmar] = useState<boolean>(false);
-  /* FUNCION PARA ABIR EL MODAL DEL CRIKKO PERO DE UNA VEZ CAMBIAR EL NOMBRE */
+  /* FUNCION PARA ABInR EL MODAL DEL CRIKKO PERO DE UNA VEZ CAMBIAR EL NOMBRE */
   const abrirModalConfirmar = (nombreTec: string) => {
     setModalConfirmar(true);
     setNombreTecnica(nombreTec);
