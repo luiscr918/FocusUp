@@ -52,8 +52,7 @@ export const Aboutus = () => {
                 </div>
             </section>
             {/* Sección de equipo */}
-            <div className={`py-24 sm:py-32 ${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
-                <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
+                <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
                     <div className="max-w-xl">
                         <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
                         <p className="mt-6 text-lg/8 text-white">Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
@@ -103,8 +102,8 @@ export const Aboutus = () => {
                         </li>
                     </ul>
                 </div>
+                <Footer isChecked={noche} />
             </div>
-            <Footer isChecked={noche} />
-        </div>
+            
     )
 }
