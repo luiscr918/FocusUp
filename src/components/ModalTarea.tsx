@@ -1,37 +1,38 @@
+interface Props {
+    closeModalTarea: () => void;
+    abrirPomodoro: () => void;
+    
+}
 
-    interface Props {
-        closeModalTarea: () => void;
-        abrirPomodoro: () => void;
-    }
+export const ModalTarea = ({ closeModalTarea, abrirPomodoro }: Props) => {
+    return (
+        <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
+            <div className="relative rounded-lg w-125 p-6 shadow-md border-2 border-white flex flex-col items-center">
+                
+                <div className="w-full flex justify-between items-center mb-1">
+                    <h2 className="text-xl font-semibold text-center flex-grow">INGRESE SU TAREA</h2>
+                    <button onClick={closeModalTarea} className="bg-red-500 px-3 py-1 rounded">
+                        X
+                    </button>
+                </div>
 
-    export const ModalTarea = ({ closeModalTarea, abrirPomodoro }: Props) => {
-        return (
-            <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
-                <div className={`rounded-lg w-125 p-6 shadow-md border-2 border-white`}>
-                    
-                    <h2 className="text-xl font-semibold text-center mb-4">INGRESE SU TAREA</h2> 
-                            <div className="border-b-2 border-white my-4"></div>
+                <div className="border-b-2 border-white my-4 w-full"></div>
 
-                    <div className="flex justify-center">
-                        <input 
-                            className="bg-white text-black border border-gray-300 rounded-md p-2 outline-none focus:border-blue-500 w-3/4"
-                            type="text" 
-                            placeholder="Escribe tu tarea aquí"
+                <input 
+                    className="bg-white text-black border border-gray-100 rounded-md p-3 focus:border-blue-500 w-70 text-center" 
+                    type="text" 
+                    placeholder="Escribe tu tarea aquí..." 
+                />
 
-
-                        />
-                    </div>
-
-                    <div className="flex gap-4 mt-6 justify-center"> 
-                    
-                        <button 
-                            onClick={() => { closeModalTarea(); abrirPomodoro(); }} 
-                            className="text-white hover:text-blue-600"
-                        >
-                            INICIAR POMODORO
-                        </button>
-                    </div>
+                <div className="flex gap-4 mt-6">
+                    <button 
+                        onClick={() => { closeModalTarea(); abrirPomodoro(); }} 
+                        className="text-white hover:text-blue-600"
+                    >
+                        INICIAR POMODORO
+                    </button>
                 </div>
             </div>
-        );
-    };
+        </div>
+    );
+};
