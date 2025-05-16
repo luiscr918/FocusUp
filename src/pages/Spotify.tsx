@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Navegacion } from "../components/Navegacion";
 import { NightSky } from "../components/NightSky";
 import Footer from "../components/Footer";
-import CarruselPlaylist from "../components/CarruselPlaylist";
+import { CarruselPlaylist } from "../components/CarruselPlaylist";
+
 
 export const Spotify = () => {
   const [noche, setNoche] = useState(false);
