@@ -1,10 +1,8 @@
 interface Props {
     closeModalTarea: () => void;
-    abrirPomodoro: () => void;
-    abrirModalHome: () => void; // Nueva función
 }
 
-export const ModalTarea = ({ closeModalTarea, abrirPomodoro, abrirModalHome }: Props) => {
+export const ModalTarea = ({ closeModalTarea }: Props) => {
     return (
         <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
             <div className="relative rounded-lg w-125 p-6 shadow-md border-2 border-white flex flex-col items-center">
@@ -13,8 +11,7 @@ export const ModalTarea = ({ closeModalTarea, abrirPomodoro, abrirModalHome }: P
                     <h2 className="text-xl font-semibold text-center flex-grow">INGRESE SU TAREA</h2>
                     <button 
                         onClick={() => { 
-                            closeModalTarea(); 
-                            abrirModalHome(); 
+                            closeModalTarea();  
                         }} 
                         className="bg-red-500 px-3 py-1 rounded">
                         X
@@ -31,7 +28,7 @@ export const ModalTarea = ({ closeModalTarea, abrirPomodoro, abrirModalHome }: P
 
                 <div className="flex gap-4 mt-6">
                     <button 
-                        onClick={() => { closeModalTarea(); abrirPomodoro(); }} 
+                        onClick={() => { closeModalTarea() }} 
                         className="text-white hover:text-blue-600"
                     >
                         INICIAR POMODORO
