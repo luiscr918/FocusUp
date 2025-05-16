@@ -1,4 +1,3 @@
-import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
 import { ToogleComponent } from './ToogleComponent';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -100,7 +99,6 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                             rel="noopener noreferrer"
                             className="text-2xl hover:text-green-500"
                         >
-                            <FaSpotify />
                         </Link>
                     </li>
                 </ul>
