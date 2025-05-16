@@ -23,8 +23,8 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             {noche && <NightSky />}
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
-            {(tarea === '')
-                ? (<ModalTarea closeModalTarea={volverHome}/>)
+            {(nombre === '')
+                ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre}/>)
                 : (<TempPomodoro />)
             }
             <Footer isChecked={noche} />
