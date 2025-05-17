@@ -61,7 +61,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 3500); // Cambia cada 3.5 segundos
+    }, 3000); // Cambia cada 3 segundos
 
     // Limpiar el intervalo cuando el componente se desmonte o cambie
     return () => clearInterval(intervalId);
@@ -76,12 +76,15 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
         {images.map((item, index) => (
           <div
             key={index}
-            className={`${index === currentIndex ? "block" : "hidden"
-              } duration-700 ease-in-out`}
+            className={`
+      absolute inset-0
+      transition-opacity duration-500 ease-in-out
+      ${index === currentIndex ? "opacity-100 z-20" : "opacity-0 z-10 pointer-events-none"}
+    `}
           >
             <img
               src={item.src}
-              className="absolute block  w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute w-full h-full object-cover top-0 left-0"
               alt={`carousel item ${index + 1}`}
             />
             {index === currentIndex && (
@@ -91,7 +94,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
                   href={item.playlistUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-white px-4 py-2 rounded shadow  transition ${oscuro ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}
+                  className={`text-white px-4 py-2 rounded shadow transition ${oscuro ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}
                 >
                   Escuchar Ahora
                 </a>

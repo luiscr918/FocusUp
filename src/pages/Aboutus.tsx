@@ -18,8 +18,8 @@ export const Aboutus = () => {
                         <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
                             <div className="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                                 <h2 className="text-white text-4xl font-bold font-manrope leading-normal lg:text-start text-center">¿Quienes Somos?</h2>
-                                <p className={`text-base font-normal leading-relaxed lg:text-start text-justify ${noche ? 'text-teal-200' : 'text-gray-800'}`}>FocusUp es un gestor de estudio diseñado para optimizar el aprendizaje combinando metodologías efectivas como Pomodoro, Feynman, el método Cornell y mapas mentales. Esta herramienta ayuda a los estudiantes a organizar su tiempo y contenido de forma eficiente: con Pomodoro mejora la concentración mediante sesiones temporizadas; el método Feynman promueve la comprensión profunda al explicar conceptos con palabras simples; Cornell facilita la toma de apuntes estructurada;
-                                    y los mapas mentales permiten visualizar y conectar ideas de manera clara. FocusUp integra estas técnicas en una sola plataforma para potenciar el rendimiento académico.</p>
+                                <p className={`text-lg font-normal leading-relaxed lg:text-start text-left ${noche ? 'text-teal-200' : 'text-gray-800'}`}>FocusUp es una herramienta creada para ayudarte a estudiar mejor, integrando técnicas efectivas como
+                                    Pomodoro, Feynman, el método Cornell y mapas mentales. Con ella, puedes organizar tu tiempo, tomar apuntes, comprender conceptos y visualizar ideas de forma clara y eficiente. Todo en un solo lugar para potenciar tu enfoque y rendimiento académico.</p>
                             </div>
                             <button className="sm:w-fit w-full px-3.5 py-2 bg-teal-400 hover:bg-teal-500 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex text-white ">
                                 <Link to="/">Ir al Inicio</Link>
