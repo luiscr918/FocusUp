@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 interface Props {
   oscuro: boolean;
 }
@@ -36,9 +36,9 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   ];
 
   // Funciones para manejar la transición entre imágenes
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
   const prevSlide = () => {
     setCurrentIndex(
@@ -51,6 +51,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   };
 
   // Efecto para cambiar la imagen automáticamente cada 5 segundos
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
@@ -58,7 +59,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
 
     // Limpiar el intervalo cuando el componente se desmonte o cambie
     return () => clearInterval(intervalId);
-  }, []); // Solo se ejecuta una vez al montar el componente
+  }, [nextSlide]); // Solo se ejecuta una vez al montar el componente
 
   return (
 
@@ -78,7 +79,8 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
               alt={`carousel item ${index + 1}`}
             />
             {index === currentIndex && (
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex justify-center">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center">
+                <p className="mb-2 text-white">hola</p>
                 <a
                   href={item.playlistUrl}
                   target="_blank"
