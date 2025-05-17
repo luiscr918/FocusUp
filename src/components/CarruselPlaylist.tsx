@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-
-export const CarruselPlaylist = () => {
+interface Props {
+  oscuro: boolean;
+}
+export const CarruselPlaylist = ({ oscuro }: Props) => {
   // Estado para llevar el control de la diapositiva actual
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -47,6 +49,7 @@ export const CarruselPlaylist = () => {
   }, []); // Solo se ejecuta una vez al montar el componente
 
   return (
+    
     <div id="default-carousel" className="relative w-full">
       {/* Carousel wrapper */}
       <div className="relative h-80 overflow-hidden rounded-lg md:h-[32rem]">
@@ -68,7 +71,7 @@ export const CarruselPlaylist = () => {
                   href={item.playlistUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+                  className={`text-white px-4 py-2 rounded shadow  transition ${oscuro ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}
                 >
                   Ir a Playlist
                 </a>
