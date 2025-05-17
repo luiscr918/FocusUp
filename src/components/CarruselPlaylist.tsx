@@ -61,7 +61,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 4000); // Cambia cada 4 segundos
+    }, 3500); // Cambia cada 3.5 segundos
 
     // Limpiar el intervalo cuando el componente se desmonte o cambie
     return () => clearInterval(intervalId);
