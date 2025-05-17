@@ -9,15 +9,27 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   // Lista de imágenes que se mostrarán en el carrusel
   const images = [
     {
-      src: "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-1143107320-e1597136744606.jpg",
+      src: "https://4kwallpapers.com/images/wallpapers/lofi-japanese-3840x2160-14884.jpg",
       playlistUrl: "https://open.spotify.com/playlist/1",
     },
     {
-      src: "https://purina.com.ec/sites/default/files/2022-11/purina-brand-cuanto-vive-un-gato-nota_03.jpg",
+      src: "https://images.unsplash.com/photo-1497989462347-f3fdb55caa59?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMzc2Mjd8fGVufDB8fHx8fA%3D%3D",
       playlistUrl: "https://open.spotify.com/playlist/2",
     },
     {
-      src: "https://www.colchesterzoologicalsociety.com/wp-content/uploads/2024/09/Green-Iguana.jpg",
+      src: "https://images5.alphacoders.com/798/thumb-1920-798722.png",
+      playlistUrl: "https://open.spotify.com/playlist/3",
+    },
+    {
+      src: "https://images6.alphacoders.com/136/thumb-1920-1361761.jpeg",
+      playlistUrl: "https://open.spotify.com/playlist/3",
+    },
+    {
+      src: "https://m.gettywallpapers.com/wp-content/uploads/2023/11/Anime-Boy-Studying-4k-Wallpaper-For-PC-scaled.jpg",
+      playlistUrl: "https://open.spotify.com/playlist/3",
+    },
+    {
+      src: "https://a-static.besthdwallpaper.com/chill-shiba-sleeping-christmas-room-wallpaper-2880x1800-88233_8.jpg",
       playlistUrl: "https://open.spotify.com/playlist/3",
     },
     // ...agrega más objetos según necesites
@@ -42,14 +54,14 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 2500); // Cambia cada 5 segundos
+    }, 4000); // Cambia cada 4 segundos
 
     // Limpiar el intervalo cuando el componente se desmonte o cambie
     return () => clearInterval(intervalId);
   }, []); // Solo se ejecuta una vez al montar el componente
 
   return (
-    
+
     <div id="default-carousel" className="relative w-full">
       {/* Carousel wrapper */}
       <div className="relative h-80 overflow-hidden rounded-lg md:h-[32rem]">
