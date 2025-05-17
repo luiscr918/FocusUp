@@ -10,27 +10,33 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
   const images = [
     {
       src: "https://4kwallpapers.com/images/wallpapers/lofi-japanese-3840x2160-14884.jpg",
-      playlistUrl: "https://open.spotify.com/playlist/1",
+      name: 'Lofi Japan',
+      playlistUrl: "https://open.spotify.com/playlist/5YKm5Zt0AUdKrlrvWzUV6l?si=69d0b98ad5ec4ab5",
     },
     {
       src: "https://images.unsplash.com/photo-1497989462347-f3fdb55caa59?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMzc2Mjd8fGVufDB8fHx8fA%3D%3D",
-      playlistUrl: "https://open.spotify.com/playlist/2",
+      name: 'Ambient Relaxation',
+      playlistUrl: "https://open.spotify.com/playlist/5q4mxhDt3n9xG4t7d0oM3Y?si=175525828da7440f",
     },
     {
       src: "https://images5.alphacoders.com/798/thumb-1920-798722.png",
-      playlistUrl: "https://open.spotify.com/playlist/3",
+      name: 'Undertale & Sleep-Piano Music For Relaxation',
+      playlistUrl: "https://open.spotify.com/playlist/6n6JnvohJmpiC3F2YQwU6o?si=f05cec125f3c45ff",
     },
     {
       src: "https://images6.alphacoders.com/136/thumb-1920-1361761.jpeg",
-      playlistUrl: "https://open.spotify.com/playlist/3",
+      name: 'Chill Vibes',
+      playlistUrl: "https://open.spotify.com/playlist/4IobLZ6VHv6bi9g36zYHJ8?si=612d680e1d774e1d",
     },
     {
       src: "https://m.gettywallpapers.com/wp-content/uploads/2023/11/Anime-Boy-Studying-4k-Wallpaper-For-PC-scaled.jpg",
-      playlistUrl: "https://open.spotify.com/playlist/3",
+      name: 'Lofi Hip Hop radio to relax/study/sleep ',
+      playlistUrl: "https://open.spotify.com/playlist/21KXYY1S0ZALYl0q3uDlUU?si=7f5c05be328c44dd",
     },
     {
       src: "https://a-static.besthdwallpaper.com/chill-shiba-sleeping-christmas-room-wallpaper-2880x1800-88233_8.jpg",
-      playlistUrl: "https://open.spotify.com/playlist/3",
+      name: 'Dreamy Lofi',
+      playlistUrl: "https://open.spotify.com/playlist/31BkGDoJAO042TGUN3prMu?si=29fe9121bbb14cd4",
     },
     // ...agrega más objetos según necesites
   ];
@@ -80,14 +86,14 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
             />
             {index === currentIndex && (
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center">
-                <p className="mb-2 text-white">hola</p>
+                <p className="mb-2 text-white">{item.name}</p>
                 <a
                   href={item.playlistUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-white px-4 py-2 rounded shadow  transition ${oscuro ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}
                 >
-                  Ir a Playlist
+                  Escuchar Ahora
                 </a>
               </div>
             )}
