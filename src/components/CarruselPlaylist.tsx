@@ -86,7 +86,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
             />
             {index === currentIndex && (
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center">
-                <p className="mb-2 text-white">{item.name}</p>
+                <p className="mb-2 px-2 py-1 bg-black/5 text-white rounded">{item.name}</p>
                 <a
                   href={item.playlistUrl}
                   target="_blank"
