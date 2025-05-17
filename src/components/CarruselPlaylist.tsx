@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export const CarruselPlaylist = () => {
   // Estado para llevar el control de la diapositiva actual
@@ -6,11 +6,19 @@ export const CarruselPlaylist = () => {
 
   // Lista de imágenes que se mostrarán en el carrusel
   const images = [
-    "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-1143107320-e1597136744606.jpg",
-    "https://purina.com.ec/sites/default/files/2022-11/purina-brand-cuanto-vive-un-gato-nota_03.jpg",
-    "https://www.colchesterzoologicalsociety.com/wp-content/uploads/2024/09/Green-Iguana.jpg",
-    "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-1143107320-e1597136744606.jpg",
-    "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-1143107320-e1597136744606.jpg",
+    {
+      src: "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-1143107320-e1597136744606.jpg",
+      playlistUrl: "https://open.spotify.com/playlist/1",
+    },
+    {
+      src: "https://purina.com.ec/sites/default/files/2022-11/purina-brand-cuanto-vive-un-gato-nota_03.jpg",
+      playlistUrl: "https://open.spotify.com/playlist/2",
+    },
+    {
+      src: "https://www.colchesterzoologicalsociety.com/wp-content/uploads/2024/09/Green-Iguana.jpg",
+      playlistUrl: "https://open.spotify.com/playlist/3",
+    },
+    // ...agrega más objetos según necesites
   ];
 
   // Funciones para manejar la transición entre imágenes
@@ -41,20 +49,31 @@ export const CarruselPlaylist = () => {
   return (
     <div id="default-carousel" className="relative w-full">
       {/* Carousel wrapper */}
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <div className="relative h-80 overflow-hidden rounded-lg md:h-[32rem]">
         {/* Renderizar cada imagen y solo mostrar la que corresponde al índice actual */}
-        {images.map((src, index) => (
+        {images.map((item, index) => (
           <div
             key={index}
-            className={`${
-              index === currentIndex ? "block" : "hidden"
-            } duration-700 ease-in-out`}
+            className={`${index === currentIndex ? "block" : "hidden"
+              } duration-700 ease-in-out`}
           >
             <img
-              src={src}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              src={item.src}
+              className="absolute block  w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt={`carousel item ${index + 1}`}
             />
+            {index === currentIndex && (
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex justify-center">
+                <a
+                  href={item.playlistUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+                >
+                  Ir a Playlist
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -65,9 +84,8 @@ export const CarruselPlaylist = () => {
           <button
             key={index}
             type="button"
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-blue-500" : "bg-gray-300"
-            }`}
+            className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-blue-500" : "bg-gray-300"
+              }`}
             aria-current={currentIndex === index ? "true" : "false"}
             aria-label={`Slide ${index + 1}`}
             onClick={() => goToSlide(index)}
