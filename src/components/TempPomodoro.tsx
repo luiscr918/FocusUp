@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 export const TempPomodoro = () => {
     const [tiempo, setTiempo] = useState(25 * 60); // Tiempo en segundos
     const [crono, setCrono] = useState(false); // Controla si el temporizador está corriendo

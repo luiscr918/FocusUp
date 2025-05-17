@@ -18,7 +18,7 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
         switch (nombre) {
             case 'Pomodoro':
                 setImagen(ImgsDefs.IMGPOMODORO);
-                setDefinicion(ImgsDefs.DEFPOMODORO);
+                setDefinicion(ImgsDefs.DEFPOMODORO);    
                 break;
             case 'Feynman':
                 setImagen(ImgsDefs.IMGFEYNMAN);

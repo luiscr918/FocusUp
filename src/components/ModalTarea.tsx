@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface Props {
     closeModalTarea: () => void;
-    guardarNombre: (nombre:string) => void;
+    guardarNombre: (nombre: string) => void;
 }
 
 export const ModalTarea = ({ closeModalTarea, guardarNombre }: Props) => {
@@ -24,18 +24,31 @@ export const ModalTarea = ({ closeModalTarea, guardarNombre }: Props) => {
                 </div>
 
                 <div className="border-b-2 border-white my-4 w-full"></div>
-
                 <input
                     className="bg-white text-black border border-gray-100 rounded-md p-3 focus:border-blue-500 w-70 text-center"
                     type="text"
                     placeholder="Escribe tu tarea aquí..."
                     value={nombreTarea}
-                    onChange={(e) => setNombreTarea(e.target.value)}
+                    onChange={(e) => {
+                        const valor = e.target.value;
+                        if (valor.length === 1 && valor[0] === " ") {
+                            alert("No se permite espacio al inicio.");
+                            return;
+                        }
+                        setNombreTarea(valor);
+                    }}
                 />
 
                 <div className="flex gap-4 mt-6">
                     <button
-                        onClick={() => guardarNombre(nombreTarea)} className="text-white hover:text-blue-600"
+                        onClick={() => {
+                            if (nombreTarea.trim() === "") {
+                                alert("Por favor, ingrese una tarea.");
+                                return;
+                            }
+                            guardarNombre(nombreTarea);
+                        }}
+                        className="text-white border-2 border-white bg-blue-400 px-6 py-2 rounded hover:bg-blue-500 cursor-pointer"
                     >
                         GUARDAR TAREA
                     </button>
@@ -44,5 +57,4 @@ export const ModalTarea = ({ closeModalTarea, guardarNombre }: Props) => {
         </div>
     );
 };
-
 
