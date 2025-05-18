@@ -48,7 +48,7 @@ export const ModalTarea = ({ closeModalTarea, guardarNombre }: Props) => {
                             }
                             guardarNombre(nombreTarea);
                         }}
-                        className="text-white border-2 border-white bg-blue-400 px-6 py-2 rounded hover:bg-blue-500 cursor-pointer"
+                        className="text-white border-2 border-white bg-teal-400 hover:bg-teal-500 px-6 py-2 rounded  cursor-pointer"
                     >
                         GUARDAR TAREA
                     </button>
