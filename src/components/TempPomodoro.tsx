@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+interface Props {
+    tarea: string;
+}
 
-export const TempPomodoro = () => {
+export const TempPomodoro = ({ tarea }: Props) => {
     const [tiempo, setTiempo] = useState(25 * 60); // Tiempo en segundos
     const [crono, setCrono] = useState(false); // Controla si el temporizador está corriendo
     const [enDescanso, setEnDescanso] = useState(false); // Indica si es tiempo de descanso o trabajo
@@ -89,6 +92,7 @@ export const TempPomodoro = () => {
 
     return (
         <div className="text-center">
+            <h2 className="text-white text-3xl">Tarea: {tarea}</h2>
             <h3 className="text-white text-2xl">
                 {enDescanso ? "Tiempo de Descanso" : "Tiempo de Trabajo"}
             </h3>

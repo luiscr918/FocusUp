@@ -12,14 +12,14 @@ export const Aboutus = () => {
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             {/* contenido */}
-            <section className="py-24 relative">
+            <section className="py-10 ">
                 <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
                     <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
                         <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
                             <div className="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                                 <h2 className="text-white text-4xl font-bold font-manrope leading-normal lg:text-start text-center">¿Quienes Somos?</h2>
-                                <p className="text-white text-base font-normal leading-relaxed lg:text-start text-justify">FocusUp es un gestor de estudio diseñado para optimizar el aprendizaje combinando metodologías efectivas como Pomodoro, Feynman, el método Cornell y mapas mentales. Esta herramienta ayuda a los estudiantes a organizar su tiempo y contenido de forma eficiente: con Pomodoro mejora la concentración mediante sesiones temporizadas; el método Feynman promueve la comprensión profunda al explicar conceptos con palabras simples; Cornell facilita la toma de apuntes estructurada;
-                                    y los mapas mentales permiten visualizar y conectar ideas de manera clara. FocusUp integra estas técnicas en una sola plataforma para potenciar el rendimiento académico.</p>
+                                <p className={`text-lg font-normal leading-relaxed lg:text-start text-left ${noche ? 'text-teal-200' : 'text-gray-800'}`}>FocusUp es una herramienta creada para ayudarte a estudiar mejor, integrando técnicas efectivas como
+                                    Pomodoro, Feynman, el método Cornell y mapas mentales. Con ella, puedes organizar tu tiempo, tomar apuntes, comprender conceptos y visualizar ideas de forma clara y eficiente. Todo en un solo lugar para potenciar tu enfoque y rendimiento académico.</p>
                             </div>
                             <button className="sm:w-fit w-full px-3.5 py-2 bg-teal-400 hover:bg-teal-500 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex text-white ">
                                 <Link to="/">Ir al Inicio</Link>
@@ -52,58 +52,58 @@ export const Aboutus = () => {
                 </div>
             </section>
             {/* Sección de equipo */}
-                <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
-                    <div className="max-w-xl">
-                        <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
-                        <p className="mt-6 text-lg/8 text-white">Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
+            <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:px-2 xl:grid-cols-3">
+                <div className="max-w-xl    ">
+                    <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">Conoce a Nuestro Grupo de Trabajo</h2>
+                    <p className={`mt-6 text-lg/8 ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Somos un equipo multidisciplinario comprometido con mejorar la experiencia educativa.
                         Combinamos tecnología, pedagogía y diseño para crear soluciones eficientes y accesibles.
                         Nuestra misión es facilitar el aprendizaje a través de herramientas intuitivas y efectivas.</p>
-                    </div>
-                    <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-10 xl:col-span-2">
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Luis Castillo</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Scrum Master</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Alisson Guapulema</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Desarrollador / Tester</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Andres Falcon</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Cristopher Chasiloa</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="flex items-center gap-x-6">
-                                <div>
-                                    <h3 className="text-base/7 font-semibold tracking-tight text-white">Jean Carlos Itaz</h3>
-                                    <p className="text-sm/6 font-semibold text-white">Desarrollador / Diseñador</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-                <Footer isChecked={noche} />
+                <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-10 xl:col-span-2">
+                    <li>
+                        <div className="flex items-center gap-x-6">
+                            <div>
+                                <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Luis Castillo</h3>
+                                <p className="text-sm/6 font-semibold text-white">Scrum Master</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center gap-x-6">
+                            <div>
+                                <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Alisson Guapulema</h3>
+                                <p className="text-sm/6 font-semibold text-white">Desarrollador / Tester</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center gap-x-6">
+                            <div>
+                                <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Andres Falcon</h3>
+                                <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center gap-x-6">
+                            <div>
+                                <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Cristopher Chasiloa</h3>
+                                <p className="text-sm/6 font-semibold text-white">Desarrollador</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center gap-x-6">
+                            <div>
+                                <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Jean Carlos Itaz</h3>
+                                <p className="text-sm/6 font-semibold text-white">Desarrollador / Diseñador</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            
+            <Footer isChecked={noche} />
+        </div>
+
     )
 }

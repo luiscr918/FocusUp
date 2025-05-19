@@ -11,14 +11,14 @@ interface Props {
     noche: boolean;
 }
 
-export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPrimerModal, noche}: Props) => {
+export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPrimerModal, noche }: Props) => {
     const [imagen, setImagen] = useState<string>('');
     const [definicion, setDefinicion] = useState<string>('');
     useEffect(() => {
         switch (nombre) {
             case 'Pomodoro':
                 setImagen(ImgsDefs.IMGPOMODORO);
-                setDefinicion(ImgsDefs.DEFPOMODORO);
+                setDefinicion(ImgsDefs.DEFPOMODORO);    
                 break;
             case 'Feynman':
                 setImagen(ImgsDefs.IMGFEYNMAN);
@@ -85,7 +85,8 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
 
                         {/* Imagen*/}
                         <div className="flex justify-center mb-4">
-                            <img src={imagen} alt="imagen de la tecnica" className="w-full max-w-xs h-auto object-contain" />
+                            {imagen && (<img src={imagen} alt="imagen de la tecnica" className="w-full max-w-xs h-auto object-contain" />)}
+
                         </div>
 
                         {/* Descripción */}
