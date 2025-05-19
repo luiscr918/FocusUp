@@ -6,16 +6,17 @@ export const TempPomodoro = () => {
     const [enDescanso, setEnDescanso] = useState(false); // Indica si es tiempo de descanso o trabajo
     const [pausado, setPausado] = useState(false); // Indica si el temporizador está pausado
     const [ciclosCompletados, setCiclosCompletados] = useState(0); // Contador de ciclos completados
-    const [mostrarModal, setMostrarModal] = useState(false); // Tiempo restante en segundos 
+    const [mostrarModal, setMostrarModal] = useState(false); // Modal para final de tarea
     const [mostrarFelicitacion, setMostrarFelicitacion] = useState(false);
+
     useEffect(() => {
-        if (ciclosCompletados === 4) {
+        // Mostrar modal solo si se completaron 4 ciclos y no está en descanso (o sea el descanso largo terminó)
+        if (ciclosCompletados === 4 && !enDescanso) {
             setMostrarModal(true);
         }
-    }, [ciclosCompletados]);
+    }, [ciclosCompletados, enDescanso]);
 
     useEffect(() => {
-
         if (!crono) return;
 
         const temporizador = setTimeout(() => {
@@ -25,25 +26,40 @@ export const TempPomodoro = () => {
                 setCrono(false); // Pausa el temporizador automáticamente
 
                 if (enDescanso) {
-                    // Si estaba en descanso, reinicia al tiempo de trabajo
+                    // Aquí terminó un descanso
                     setEnDescanso(false);
                     setTiempo(25 * 60);
-                } else {
-                    if (ciclosCompletados < 4) {
-                        setCiclosCompletados((prev) => prev + 1);
 
-                        if ((ciclosCompletados + 1) % 4 === 0) {
-                            setTiempo(15 * 60);
-                        } else {
-                            setTiempo(5 * 60);
-                        }
-                        setEnDescanso(true);
+                    // Incrementamos el contador de ciclos solo si no estamos en descanso largo
+                    // pero para mantener la lógica correcta incrementamos siempre aquí para contar ciclos completos
+                    // En este caso, cuando el descanso largo termina, se incrementa el ciclo
+
+                    // Para saber si fue descanso largo, podemos verificar si el tiempo anterior fue 15 min
+
+                    // Vamos a controlar ciclos aquí:
+                    if (tiempo === 0) { // tiempo ya es 0, pero aquí no sabemos si el descanso fue largo o corto
+                        // Mejor guardar el tipo de descanso en un estado
+                        // Vamos a agregar un estado para saber si es descanso largo
+
+                    }
+                    // Pero para simplificar, incrementamos aquí.
+                    setCiclosCompletados((prev) => prev + 1);
+                } else {
+                    // Aquí terminó un Pomodoro, comienza descanso
+                    setEnDescanso(true);
+
+                    if ((ciclosCompletados + 1) % 4 === 0) {
+                        // Descanso largo de 15 min
+                        setTiempo(15 * 60);
+                    } else {
+                        // Descanso corto de 5 min
+                        setTiempo(5 * 60);
                     }
                 }
             }
         }, 1000);
 
-        return () => clearTimeout(temporizador); // Limpia el temporizador
+        return () => clearTimeout(temporizador);
     }, [crono, tiempo, enDescanso, ciclosCompletados]);
 
     const formatearTiempo = (segundos: number) => {
@@ -55,21 +71,18 @@ export const TempPomodoro = () => {
     };
 
     const terminarCiclo = () => {
-        setCrono(false); // Pausa el temporizador
+        setCrono(false);
         if (enDescanso) {
-            // Si está en descanso, reinicia al tiempo de trabajo
             setEnDescanso(false);
             setTiempo(25 * 60);
+            setCiclosCompletados((prev) => prev + 1);
         } else {
-            if (ciclosCompletados < 4) {
-                setCiclosCompletados((prev) => prev + 1);
-
-                if ((ciclosCompletados + 1) % 4 === 0) {
-                    setTiempo(15 * 60);
-                } else {
-                    setTiempo(5 * 60);
-                }
-                setEnDescanso(true);
+            setCrono(false);
+            setEnDescanso(true);
+            if ((ciclosCompletados + 1) % 4 === 0) {
+                setTiempo(15 * 60);
+            } else {
+                setTiempo(5 * 60);
             }
         }
     };
@@ -84,7 +97,6 @@ export const TempPomodoro = () => {
                 Ciclos completados: {ciclosCompletados}
             </p>
             <div className="mt-4">
-                {/* Botón Comenzar */}
                 {!crono && !pausado && (
                     <button
                         onClick={() => {
@@ -96,8 +108,6 @@ export const TempPomodoro = () => {
                         Comenzar
                     </button>
                 )}
-
-                {/* Botón Reanudar */}
                 {!crono && pausado && (
                     <button
                         onClick={() => {
@@ -109,8 +119,6 @@ export const TempPomodoro = () => {
                         Reanudar
                     </button>
                 )}
-
-                {/* Botón Pausar */}
                 {crono && (
                     <button
                         onClick={() => {
@@ -122,20 +130,16 @@ export const TempPomodoro = () => {
                         Pausar
                     </button>
                 )}
-
-                {/* Botón Reiniciar */}
                 <button
                     onClick={() => {
                         setCrono(false);
                         setPausado(false);
-                        setTiempo(enDescanso ? 5 * 60 : 25 * 60); // Reinicia el tiempo según el estado actual
+                        setTiempo(enDescanso ? 5 * 60 : 25 * 60);
                     }}
                     className="text-white bg-red-500 px-4 py-2 rounded mr-2"
                 >
                     Reiniciar
                 </button>
-
-                {/* Botón Terminar Ciclo */}
                 <button
                     onClick={terminarCiclo}
                     className="text-white bg-purple-500 px-4 py-2 rounded"
@@ -163,7 +167,7 @@ export const TempPomodoro = () => {
                                 setCrono(false);
                                 setPausado(false);
                                 setEnDescanso(false);
-                                setTiempo(25 * 60); // Reinicia el ciclo de trabajo
+                                setTiempo(25 * 60);
                                 setCiclosCompletados(0);
                             }}
                         >
@@ -189,3 +193,4 @@ export const TempPomodoro = () => {
         </div>
     );
 };
+
