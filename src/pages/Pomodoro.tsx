@@ -27,7 +27,10 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
                 ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre} />)
                 : (<TempPomodoro tarea={nombre} />)
             }
-            <Footer isChecked={noche} />
+            <div className="fixed bottom-0 left-0 w-full">
+                <Footer isChecked={noche} />
+            </div>
+
         </div>
 
     )
