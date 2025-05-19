@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 interface Props {
     tarea: string;
+    noche?: boolean;
 }
 
-export const TempPomodoro = ({ tarea }: Props) => {
+export const TempPomodoro = ({ tarea, noche }: Props) => {
     const [tiempo, setTiempo] = useState(25 * 60); // Tiempo en segundos
     const [crono, setCrono] = useState(false); // Controla si el temporizador está corriendo
     const [enDescanso, setEnDescanso] = useState(false); // Indica si es tiempo de descanso o trabajo
@@ -93,11 +94,11 @@ export const TempPomodoro = ({ tarea }: Props) => {
     return (
         <div className="text-center">
             <h2 className="text-white text-3xl">Tarea: {tarea}</h2>
-            <h3 className="text-white text-2xl">
+            <h3 className={`text-2xl ${noche ? 'text-teal-200' : 'text-white'}`}>
                 {enDescanso ? "Tiempo de Descanso" : "Tiempo de Trabajo"}
             </h3>
             <h1 className="text-white text-4xl">{formatearTiempo(tiempo)}</h1>
-            <p className="text-white mt-2">
+            <p className={`mt-2 ${noche ? 'text-teal-200' : 'text-white'}`}>
                 Ciclos completados: {ciclosCompletados}
             </p>
             <div className="mt-4">
@@ -107,7 +108,7 @@ export const TempPomodoro = ({ tarea }: Props) => {
                             setCrono(true);
                             setPausado(false);
                         }}
-                        className="text-white bg-green-500 px-4 py-2 rounded mr-2"
+                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-green-400' : 'bg-sky-400'}`}
                     >
                         Comenzar
                     </button>
@@ -118,7 +119,7 @@ export const TempPomodoro = ({ tarea }: Props) => {
                             setCrono(true);
                             setPausado(false);
                         }}
-                        className="text-white bg-blue-500 px-4 py-2 rounded mr-2"
+                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-cyan-300' : 'bg-green-500'} `}
                     >
                         Reanudar
                     </button>
@@ -129,7 +130,7 @@ export const TempPomodoro = ({ tarea }: Props) => {
                             setCrono(false);
                             setPausado(true);
                         }}
-                        className="text-white bg-yellow-500 px-4 py-2 rounded mr-2"
+                        className="text-white bg-fuchsia-300 px-4 py-2 rounded mr-2"
                     >
                         Pausar
                     </button>
@@ -140,13 +141,13 @@ export const TempPomodoro = ({ tarea }: Props) => {
                         setPausado(false);
                         setTiempo(enDescanso ? 5 * 60 : 25 * 60);
                     }}
-                    className="text-white bg-red-500 px-4 py-2 rounded mr-2"
+                    className="text-white bg-violet-500 px-4 py-2 rounded mr-2"
                 >
                     Reiniciar
                 </button>
                 <button
                     onClick={terminarCiclo}
-                    className="text-white bg-purple-500 px-4 py-2 rounded"
+                    className="text-white bg-rose-400 px-4 py-2 rounded"
                 >
                     Terminar Ciclo
                 </button>

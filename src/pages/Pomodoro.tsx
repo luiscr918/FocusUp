@@ -25,11 +25,17 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             {(nombre === '')
                 ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre} />)
-                : (<TempPomodoro tarea={nombre} />)
+                : (<TempPomodoro tarea={nombre} noche={noche} />)
             }
-            <div className="fixed bottom-0 left-0 w-full">
-                <Footer isChecked={noche} />
+            {/* GIF DE FONDO */}
+            <div className="flex justify-center items-center m-10">
+                <figure className="max-w-lg ">
+                    <img className="h-auto max-w-xs rounded-lg" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ2MnZwNzZscDhxdTVubDVsbGhvMDJmZG0zMGF5cnEwMTBkaW41bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XbJYBCi69nyVOffLIU/giphy.gif" alt="image description" />
+                    <figcaption className={`mt-2 text-sm text-center ${noche ? 'text-teal-200' : 'text-white'}`}>Estudia con intención, descansa con propósito</figcaption>
+                </figure>
             </div>
+            <Footer isChecked={noche} />
+
 
         </div>
 

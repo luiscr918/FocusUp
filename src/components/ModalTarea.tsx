@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/fondosMain.css";
 
 interface Props {
     closeModalTarea: () => void;
@@ -9,7 +10,7 @@ export const ModalTarea = ({ closeModalTarea, guardarNombre }: Props) => {
     const [nombreTarea, setNombreTarea] = useState<string>("");
 
     return (
-        <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
+        <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50 cielo_animado_elementos">
             <div className="relative rounded-lg w-125 p-6 shadow-md border-2 border-white flex flex-col items-center">
 
                 <div className="w-full flex justify-between items-center mb-1">
