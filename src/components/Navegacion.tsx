@@ -109,6 +109,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                 <div>
                     <ToogleComponent
                         isChecked={isChecked}
+                        
                         setIsChecked={setIsChecked}
                     />
                 </div>
