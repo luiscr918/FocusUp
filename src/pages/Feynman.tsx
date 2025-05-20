@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { NightSky } from "../components/NightSky";
+import { Navegacion } from "../components/Navegacion";
 
 export const Feynman = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -10,7 +12,8 @@ export const Feynman = () => {
     const [taskName, setTaskName] = useState('');
     const [videoPreviewURL, setVideoPreviewURL] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
-
+    const [noche, setNoche] = useState(false);
+    const [solicitarPermiso, setSolicitarPermiso] = useState(false);
     // Encender cámara
     const turnOnCamera = async () => {
         try {
@@ -35,7 +38,14 @@ export const Feynman = () => {
             }
         }
     };
-
+    useEffect(() => {
+        if (solicitarPermiso) {
+            (async () => {
+                await turnOnCamera();
+                setSolicitarPermiso(false);
+            })();
+        }
+    }, [solicitarPermiso]);
     // Solo enciende la cámara al montar si no hay grabación previa
     useEffect(() => {
         return () => {
@@ -130,126 +140,128 @@ export const Feynman = () => {
         setRecording(false);
         setPaused(false);
         setError(null);
-        await turnOnCamera();
+        setSolicitarPermiso(true);
+        setTaskName('');
+       
     };
 
     return (
-        <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md font-sans">
-            <input
-                type="text"
-                placeholder="Nombre de la tarea"
-                value={taskName}
-                onChange={(e) => setTaskName(e.target.value)}
-                disabled={recording}
-                className={`w-full mb-4 px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
-                    recording ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'
-                }`}
-                aria-label="Nombre de la tarea"
-            />
-            {taskName && <h2 className="text-2xl font-semibold mb-5 text-gray-800">{taskName}</h2>}
-
-            {error && <div className="mb-4 text-red-600 font-medium">{error}</div>}
-
-            {/* Solo muestra el video si la cámara está activa */}
-            {mediaStream && (
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    playsInline
-                    muted
-                    width={640}
-                    height={480}
-                    className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5"
+        <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
+            {noche && <NightSky />}
+            {/* Barra de navegacion */}
+            <Navegacion isChecked={noche} setIsChecked={setNoche} />
+            <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md font-sans">
+                <input
+                    type="text"
+                    placeholder="Nombre de la tarea"
+                    value={taskName}
+                    onChange={(e) => setTaskName(e.target.value)}
+                    disabled={recording}
+                    className={`w-full mb-4 px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${recording ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'
+                        }`}
+                    aria-label="Nombre de la tarea"
                 />
-            )}
+                {taskName && <h2 className="text-2xl font-semibold mb-5 text-gray-800">{taskName}</h2>}
 
-            <div className="flex flex-wrap gap-4 mb-6">
-                <button
-                    type="button"
-                    onClick={startRecording}
-                    disabled={recording || !taskName}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        recording || !taskName
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
-                    }`}
-                >
-                    Iniciar Grabación
-                </button>
-                <button
-                    type="button"
-                    onClick={pauseRecording}
-                    disabled={!recording || paused}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        !recording || paused
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300'
-                    }`}
-                >
-                    Pausar
-                </button>
-                <button
-                    type="button"
-                    onClick={resumeRecording}
-                    disabled={!recording || !paused}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        !recording || !paused
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
-                    }`}
-                >
-                    Reanudar
-                </button>
-                <button
-                    type="button"
-                    onClick={stopRecording}
-                    disabled={!recording}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        !recording
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300'
-                    }`}
-                >
-                    Detener
-                </button>
-                <button
-                    type="button"
-                    onClick={downloadRecording}
-                    disabled={recordedChunks.length === 0}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        recordedChunks.length === 0
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300'
-                    }`}
-                >
-                    Descargar
-                </button>
-                <button
-                    type="button"
-                    onClick={resetRecording}
-                    disabled={recording && !videoPreviewURL}
-                    className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${
-                        recording && !videoPreviewURL
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300'
-                    }`}
-                >
-                    Nueva Grabación
-                </button>
-            </div>
+                {error && <div className="mb-4 text-red-600 font-medium">{error}</div>}
 
-            {videoPreviewURL && (
-                <div className="mt-6">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-800">Vista previa de la grabación:</h3>
+                {/* Solo muestra el video si la cámara está activa */}
+                {mediaStream && (
                     <video
-                        src={videoPreviewURL}
-                        controls
+                        ref={videoRef}
+                        autoPlay
+                        playsInline
+                        muted
                         width={640}
                         height={480}
-                        className="w-full max-w-xl rounded-lg border border-gray-300"
+                        className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5"
                     />
+                )}
+
+                <div className="flex flex-wrap gap-4 mb-6">
+                    <button
+                        type="button"
+                        onClick={startRecording}
+                        disabled={recording || !taskName}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recording || !taskName
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
+                            }`}
+                    >
+                        Iniciar Grabación
+                    </button>
+                    <button
+                        type="button"
+                        onClick={pauseRecording}
+                        disabled={!recording || paused}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording || paused
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300'
+                            }`}
+                    >
+                        Pausar
+                    </button>
+                    <button
+                        type="button"
+                        onClick={resumeRecording}
+                        disabled={!recording || !paused}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording || !paused
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
+                            }`}
+                    >
+                        Reanudar
+                    </button>
+                    <button
+                        type="button"
+                        onClick={stopRecording}
+                        disabled={!recording}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300'
+                            }`}
+                    >
+                        Detener
+                    </button>
+                    <button
+                        type="button"
+                        onClick={downloadRecording}
+                        disabled={recordedChunks.length === 0}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recordedChunks.length === 0
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300'
+                            }`}
+                    >
+                        Descargar
+                    </button>
+                    <button
+                        type="button"
+                        onClick={resetRecording}
+                        disabled={recording && !videoPreviewURL}
+                        className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recording && !videoPreviewURL
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300'
+                            }`}
+                    >
+                        Nueva Grabación
+                    </button>
                 </div>
-            )}
+
+                {videoPreviewURL && (
+                    <div className="mt-6">
+                        <h3 className="text-xl font-semibold mb-3 text-gray-800">Vista previa de la grabación:</h3>
+                        <video
+                            src={videoPreviewURL}
+                            controls
+                            width={640}
+                            height={480}
+                            className="w-full max-w-xl rounded-lg border border-gray-300"
+                        />
+                    </div>
+                )}
+            </div>
+
         </div>
+
     );
 };
