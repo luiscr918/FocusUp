@@ -21,9 +21,9 @@ export const MapasMentales = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -32,9 +32,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -43,9 +43,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -55,9 +55,13 @@ export const MapasMentales = () => {
 
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image" />
+                            <img
+                                className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
+                                src="https://pagedone.io/asset/uploads/1700732027.png"
+                                alt="Denim jacket image"
+                            />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -69,9 +73,9 @@ export const MapasMentales = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -80,9 +84,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -91,9 +95,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -103,9 +107,13 @@ export const MapasMentales = () => {
 
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image" />
+                            <img
+                                className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
+                                src="https://pagedone.io/asset/uploads/1700732027.png"
+                                alt="Denim jacket image"
+                            />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -117,9 +125,9 @@ export const MapasMentales = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731972.png" alt="Jacket image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -128,9 +136,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700731993.png" alt="Blazer image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -139,9 +147,9 @@ export const MapasMentales = () => {
                         </a>
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="https://pagedone.io/asset/uploads/1700732011.png" alt="printed top image" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
@@ -151,9 +159,13 @@ export const MapasMentales = () => {
 
                         <a href="javascript:;"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover" src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image" />
+                            <img
+                                className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
+                                src="https://pagedone.io/asset/uploads/1700732027.png"
+                                alt="Denim jacket image"
+                            />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
-                                <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
                                         <h3 className="text-white px-4 py-2 ">Editar</h3>
                                     </button>
