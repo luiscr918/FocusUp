@@ -198,8 +198,8 @@ export const Feynman = () => {
                             ? 'bg-sky-500 cursor-not-allowed '
                             : 'bg-emerald-500 hover:bg-emerald-600 focus:ring-4 focus:ring-blue-300'
                             }`}>
-                        Iniciar Grabación
-                    </button>
+                                GRABAR
+                        </button>
                     <button
                         type="button"
                         onClick={pauseRecording}
@@ -217,7 +217,7 @@ export const Feynman = () => {
                         disabled={!recording || !paused}
                         className={`flex-1 min-w-[100px] px-3 border-2 border-white py-1 rounded font-semibold text-white transition cursor-pointer  ${!recording || !paused
                             ? 'bg-yellow-400 cursor-not-allowed'
-                            : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
+                            : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring  -green-300'
                             }`}>
                         Reanudar
                     </button>
