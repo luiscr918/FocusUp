@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { TempPomodoro } from "../components/TempPomodoro";
 import { useNavigate } from "react-router-dom";
 import { ModalTarea } from "../components/ModalTarea";
+import { IconoComponent } from "../components/IconoComponente";
 interface Props {
     tarea?: string;
 }
@@ -23,6 +24,7 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             {noche && <NightSky />}
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
+            <IconoComponent noche={noche} />
             {(nombre === '')
                 ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre} />)
                 : (<TempPomodoro tarea={nombre} setNombre={setNombre} noche={noche} />)
