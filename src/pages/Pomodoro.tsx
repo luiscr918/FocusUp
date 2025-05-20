@@ -25,7 +25,7 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             {(nombre === '')
                 ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre} />)
-                : (<TempPomodoro tarea={nombre} noche={noche} />)
+                : (<TempPomodoro tarea={nombre} setNombre={setNombre} noche={noche} />)
             }
             {/* GIF DE FONDO */}
             <div className="flex justify-center items-center m-10">
