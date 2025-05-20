@@ -8,7 +8,6 @@ import { ModalHomeComponent } from "../components/ModalHomeComponent";
 
 
 
-
 export const Home = () => {
   const [noche, setNoche] = useState(false);
   const [showModal, setShowModal] = useState(false);
