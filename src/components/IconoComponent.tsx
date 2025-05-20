@@ -12,7 +12,7 @@ export const IconoComponent = ({noche}:Props) => {
                 rel="noopener noreferrer"
                 className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28  flex items-center justify-center ${noche ? 'hover:text-teal-200' : 'hover:text-yellow-400'}`}>
                 <Link to={"/"}>
-                    <FiHelpCircle className="md:text-5xl " />
+                    <FiHelpCircle className="md:text-5xl" />
                 </Link>
             </button>
         </div>
