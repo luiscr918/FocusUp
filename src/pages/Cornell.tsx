@@ -85,6 +85,14 @@ export const Cornell = () => {
           placeholder="Escribe un resumen breve de las ideas principales aquí..."
         ></textarea>
       </form>
+      <div className="flex justify-center mt-4">
+        <button type="button" className={`${noche
+          ?'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600   focus:ring-teal-300  shadow-lg shadow-teal-500/50   '
+          :'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600   focus:ring-cyan-300  shadow-lg shadow-cyan-500/50  '
+        } hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`}
+        
+        >DESCARGAR COMO PDF</button>
+      </div>
       <Footer isChecked={noche} />
     </div>
   );
