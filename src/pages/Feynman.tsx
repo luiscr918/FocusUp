@@ -47,21 +47,21 @@ export const Feynman = () => {
             })();
         }
     }, [solicitarPermiso]);
-    // Solo enciende la cámara al montar si no hay grabación previa
-    useEffect(() => {
-        return () => {
-            if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
-                mediaRecorderRef.current.stop();
-            }
-            turnOffCamera();
-            if (videoPreviewURL) {
-                URL.revokeObjectURL(videoPreviewURL);
-            }
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+ useEffect(() => {
+    if (!mediaStream) {
+        turnOnCamera();
+    }
+    return () => {
+        if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
+            mediaRecorderRef.current.stop();
+        }
+        turnOffCamera();
+        if (videoPreviewURL) {
+            URL.revokeObjectURL(videoPreviewURL);
+        }
+    };
+}, []);
 
-    // Iniciar grabación y encender cámara si es necesario
     const startRecording = async () => {
         if (!mediaStream) {
             await turnOnCamera();
@@ -70,7 +70,6 @@ export const Feynman = () => {
         setVideoPreviewURL(null);
         setError(null);
 
-        // Espera a que la cámara esté lista
         const stream = mediaStream || (videoRef.current?.srcObject as MediaStream);
         if (stream) {
             let localChunks: Blob[] = [];
@@ -118,7 +117,6 @@ export const Feynman = () => {
             mediaRecorderRef.current.stop();
             setRecording(false);
             setPaused(false);
-            turnOffCamera();
         }
     };
 
@@ -134,7 +132,6 @@ export const Feynman = () => {
         }
     };
 
-    // Nueva grabación: enciende la cámara de nuevo
     const resetRecording = async () => {
         setRecordedChunks([]);
         setVideoPreviewURL(null);
@@ -149,7 +146,6 @@ export const Feynman = () => {
     return (
         <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
             {noche && <NightSky />}
-            {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md font-sans">
                 <input
@@ -166,7 +162,6 @@ export const Feynman = () => {
 
                 {error && <div className="mb-4 text-red-600 font-medium">{error}</div>}
 
-                {/* Solo muestra el video si la cámara está activa */}
                 {mediaStream && (
                     <video
                         ref={videoRef}
@@ -175,8 +170,7 @@ export const Feynman = () => {
                         muted
                         width={640}
                         height={480}
-                        className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5"
-                    />
+                        className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5" />
                 )}
 
                 <div className="flex flex-wrap gap-4 mb-6">
@@ -185,10 +179,9 @@ export const Feynman = () => {
                         onClick={startRecording}
                         disabled={recording || !taskName}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recording || !taskName
-                            ? 'bg-gray-400 cursor-not-allowed'
+                            ? 'bg-gray-400 cursor-not-allowed '
                             : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
-                            }`}
-                    >
+                            }`}>
                         Iniciar Grabación
                     </button>
                     <button
@@ -209,8 +202,7 @@ export const Feynman = () => {
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording || !paused
                             ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
-                            }`}
-                    >
+                            }`}>
                         Reanudar
                     </button>
                     <button
@@ -220,8 +212,7 @@ export const Feynman = () => {
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording
                             ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300'
-                            }`}
-                    >
+                            }`}>
                         Detener
                     </button>
                     <button
@@ -231,8 +222,7 @@ export const Feynman = () => {
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recordedChunks.length === 0
                             ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300'
-                            }`}
-                    >
+                            }`} >
                         Descargar
                     </button>
                     <button
@@ -263,9 +253,7 @@ export const Feynman = () => {
             </div>
             <div className="flex just">
                  <Footer isChecked={noche} />
-            </div>
-           
+            </div>          
         </div>
-
     );
 };
