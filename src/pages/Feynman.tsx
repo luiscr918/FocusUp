@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NightSky } from "../components/NightSky";
 import { Navegacion } from "../components/Navegacion";
+import Footer from "../components/Footer";
 
 export const Feynman = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -142,7 +143,7 @@ export const Feynman = () => {
         setError(null);
         setSolicitarPermiso(true);
         setTaskName('');
-       
+
     };
 
     return (
@@ -184,8 +185,8 @@ export const Feynman = () => {
                         onClick={startRecording}
                         disabled={recording || !taskName}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recording || !taskName
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
                             }`}
                     >
                         Iniciar Grabación
@@ -195,8 +196,8 @@ export const Feynman = () => {
                         onClick={pauseRecording}
                         disabled={!recording || paused}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording || paused
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300'
                             }`}
                     >
                         Pausar
@@ -206,8 +207,8 @@ export const Feynman = () => {
                         onClick={resumeRecording}
                         disabled={!recording || !paused}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording || !paused
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300'
                             }`}
                     >
                         Reanudar
@@ -217,8 +218,8 @@ export const Feynman = () => {
                         onClick={stopRecording}
                         disabled={!recording}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${!recording
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300'
                             }`}
                     >
                         Detener
@@ -228,8 +229,8 @@ export const Feynman = () => {
                         onClick={downloadRecording}
                         disabled={recordedChunks.length === 0}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recordedChunks.length === 0
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300'
                             }`}
                     >
                         Descargar
@@ -239,8 +240,8 @@ export const Feynman = () => {
                         onClick={resetRecording}
                         disabled={recording && !videoPreviewURL}
                         className={`flex-1 min-w-[120px] px-5 py-3 rounded-lg font-semibold text-white transition ${recording && !videoPreviewURL
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300'
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300'
                             }`}
                     >
                         Nueva Grabación
@@ -260,7 +261,10 @@ export const Feynman = () => {
                     </div>
                 )}
             </div>
-
+            <div className="flex just">
+                 <Footer isChecked={noche} />
+            </div>
+           
         </div>
 
     );
