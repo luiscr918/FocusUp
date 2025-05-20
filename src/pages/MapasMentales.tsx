@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NightSky } from "../components/NightSky";
 import { Navegacion } from "../components/Navegacion";
 import Footer from "../components/Footer";
+import { IconoComponent } from "../components/IconoComponente";
 
 
 
@@ -14,6 +15,7 @@ export const MapasMentales = () => {
             {noche && <NightSky />}
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
+            <IconoComponent noche={noche} />
             {/* Contenido de la pagina */}
             <section className="py-24">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

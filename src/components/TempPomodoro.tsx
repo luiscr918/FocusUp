@@ -139,10 +139,10 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
             </div>
             {mostrarModal && (
                 <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
-                    <div className="bg-white p-8 rounded shadow-lg text-black">
-                        <h2 className="text-xl mb-4">¿La tarea está terminada?</h2>
+                    <div className={` bwhite p-8  shadow-lg text-white ${noche ? 'cuerpo_noche': 'cielo_animado'}`}>
+                        <h2 className={`text-2xl mb-4 ${noche ? 'text-white' : 'text-grey-800'}`}>¿La tarea está terminada?</h2>
                         <button
-                            className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+                            className={`${noche ? 'text-white': 'text-black'} bg-blue-400 px-4 py-2 rounded mr-2`}
                             onClick={() => {
                                 setMostrarModal(false);
                                 setMostrarFelicitacion(true);
@@ -151,7 +151,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                             Sí
                         </button>
                         <button
-                            className="bg-red-500 text-white px-4 py-2 rounded"
+                            className={`bg-blue-400 px-4 py-2 rounded ${noche ? 'text-white' :'text-black'}`}
                             onClick={() => {
                                 setMostrarModal(false);
                                 setCrono(false);
