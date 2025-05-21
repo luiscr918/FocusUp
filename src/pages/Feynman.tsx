@@ -192,6 +192,7 @@ export const Feynman = () => {
                         className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5" />
                 )}
 
+
                 <div className="w-full flex flex-col items-center justify-center mb-6">
                     <div className="grid grid-cols-3 gap-4">
                         <button
@@ -261,7 +262,7 @@ export const Feynman = () => {
                             </span>
                             <span className="text font-medium">Detener</span>
                         </button>
-                        {/* Descargar */}
+
                         <button
                             type="button"
                             onClick={downloadRecording}
@@ -280,7 +281,7 @@ export const Feynman = () => {
                             </span>
                             <span className="text font-medium">Descargar</span>
                         </button>
-                        {/* Nueva Grabación */}
+
                         <button
                             type="button"
                             onClick={resetRecording}
