@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { TempPomodoro } from "../components/TempPomodoro";
 import { useNavigate } from "react-router-dom";
 import { ModalTarea } from "../components/ModalTarea";
-import { IconoComponent } from "../components/IconoComponente";
+import { IconoComponent } from "../components/IconoComponent";
 interface Props {
     tarea?: string;
 }
