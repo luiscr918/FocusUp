@@ -142,7 +142,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                     <div className={`bwhite p-8 shadow-lg text-Black border-2 border-white ${noche ? 'bg-gray-800' : 'cielo_animado_elementos'}`}>
                         <h2 className={`text-2xl mb-4 ${noche ? 'text-white' : 'text-white'}`}>¿La tarea está terminada?</h2>
                         <button
-                            className={`text-white px-4 py-2 rounded mr-2  ${noche ? 'bg-gray-400' : 'bg-blue-400'}`}
+                            className={`text-white px-4 py-2 rounded mr-2  ${noche ? 'bg-gray-400' : 'bg-blue-400'} cursor-pointer`}
                             onClick={() => {
                                 setMostrarModal(false);
                                 setMostrarFelicitacion(true);
@@ -151,7 +151,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                             Sí
                         </button>
                         <button
-                            className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'}`}
+                            className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'} cursor-pointer`}
                             onClick={() => {
                                 setMostrarModal(false);
                                 setCrono(false);
@@ -173,7 +173,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                         <p className="text-white text-xl">Has completado tu tarea con éxito.</p>
                         <div className="flex justify-center gap-4 mt-4">
                             <button
-                                className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'}`}
+                                className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'} cursor-pointer `}
                                 onClick={() => {
                                     navigate("/");
                                 }}
@@ -181,7 +181,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                                 Inicio
                             </button>
                             <button
-                                className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'}`}
+                                className={`text-white px-4 py-2 rounded ${noche ? 'bg-gray-400' : 'bg-blue-400'} cursor-pointer`}
                                 onClick={() => {
                                     setMostrarFelicitacion(false);
                                     setNombre("");
