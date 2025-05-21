@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 interface Props {
     tarea: string;
+    setNombre: (t: string) => void; 
     noche?: boolean;
 }
 
-export const TempPomodoro = ({ tarea, noche }: Props) => {
+export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
     const [tiempo, setTiempo] = useState(25 * 60); // Tiempo en segundos
     const [crono, setCrono] = useState(false); // Controla si el temporizador está corriendo
     const [enDescanso, setEnDescanso] = useState(false); // Indica si es tiempo de descanso o trabajo
@@ -12,6 +15,7 @@ export const TempPomodoro = ({ tarea, noche }: Props) => {
     const [ciclosCompletados, setCiclosCompletados] = useState(0); // Contador de ciclos completados
     const [mostrarModal, setMostrarModal] = useState(false); // Modal para final de tarea
     const [mostrarFelicitacion, setMostrarFelicitacion] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Mostrar modal solo si se completaron 4 ciclos y no está en descanso (o sea el descanso largo terminó)
@@ -30,33 +34,14 @@ export const TempPomodoro = ({ tarea, noche }: Props) => {
                 setCrono(false); // Pausa el temporizador automáticamente
 
                 if (enDescanso) {
-                    // Aquí terminó un descanso
                     setEnDescanso(false);
                     setTiempo(25 * 60);
-
-                    // Incrementamos el contador de ciclos solo si no estamos en descanso largo
-                    // pero para mantener la lógica correcta incrementamos siempre aquí para contar ciclos completos
-                    // En este caso, cuando el descanso largo termina, se incrementa el ciclo
-
-                    // Para saber si fue descanso largo, podemos verificar si el tiempo anterior fue 15 min
-
-                    // Vamos a controlar ciclos aquí:
-                    if (tiempo === 0) { // tiempo ya es 0, pero aquí no sabemos si el descanso fue largo o corto
-                        // Mejor guardar el tipo de descanso en un estado
-                        // Vamos a agregar un estado para saber si es descanso largo
-
-                    }
-                    // Pero para simplificar, incrementamos aquí.
                     setCiclosCompletados((prev) => prev + 1);
                 } else {
-                    // Aquí terminó un Pomodoro, comienza descanso
                     setEnDescanso(true);
-
                     if ((ciclosCompletados + 1) % 4 === 0) {
-                        // Descanso largo de 15 min
                         setTiempo(15 * 60);
                     } else {
-                        // Descanso corto de 5 min
                         setTiempo(5 * 60);
                     }
                 }
@@ -186,16 +171,28 @@ export const TempPomodoro = ({ tarea, noche }: Props) => {
                     <div className="bg-white p-8 rounded shadow-lg text-black">
                         <h2 className="text-2xl mb-4">¡Felicitaciones!</h2>
                         <p>Has completado tu tarea con éxito.</p>
-                        <button
-                            className="bg-blue-400 text-white px-4 py-2 rounded mt-4"
-                            onClick={() => setMostrarFelicitacion(false)}
-                        >
-                            Cerrar
-                        </button>
+                        <div className="flex justify-center gap-4 mt-4">
+                            <button
+                                className="bg-blue-400 text-white px-4 py-2 rounded"
+                                onClick={() => {
+                                    navigate("/");
+                                }}
+                            >
+                                Inicio
+                            </button>
+                            <button
+                                className="bg-blue-400 text-white px-4 py-2 rounded"
+                                onClick={() => { 
+                                    setMostrarFelicitacion(false);
+                                    setNombre(""); 
+                                }}
+                            >
+                                Nueva Tarea
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}
         </div>
     );
 };
-
