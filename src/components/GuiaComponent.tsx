@@ -1,4 +1,7 @@
 
+import { PasosCornell } from "./subcomponentesGuia/PasosCornell";
+import { PasosFeyman } from "./subcomponentesGuia/PasosFeyman";
+import { PasosMapasMentales } from "./subcomponentesGuia/PasosMapasMentales";
 import { PasosPomodoro } from "./subcomponentesGuia/pasosPomodoro";
 
 
@@ -15,13 +18,13 @@ const definirPasos=()=>{
 return (<PasosPomodoro noche={noche} />)
             case 'Feynman':
                 
-                break;
+return(<PasosFeyman noche={noche} /> )
             case 'Cornell':
                 
-                break;
+return(<PasosCornell noche={noche} /> )
             case 'Mapas Mentales':
                 
-                break;
+return(<PasosMapasMentales noche={noche} /> )
 
             default:
                 console.log('No se ha encontrado la técnica');

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import * as ImgsDefs from "../const/imgsDefModalConfirmar";
 import "../styles/fondosMain.css";
@@ -14,6 +13,8 @@ interface Props {
 export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPrimerModal, noche }: Props) => {
     const [imagen, setImagen] = useState<string>('');
     const [definicion, setDefinicion] = useState<string>('');
+    
+    
     useEffect(() => {
         switch (nombre) {
             case 'Pomodoro':
@@ -62,6 +63,9 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
         }
     }
 
+    const abrirGuia = (nombre: string) => {
+        navigate(`/guia/${nombre}`);
+    };
 
 
     return (
@@ -97,7 +101,7 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
                         {/* Botones */}
                         <div className="flex justify-between ">
                             <button
-                                onClick={closeModal}
+                                onClick={() => abrirGuia(nombre)}
                                 className={`${noche ? 'text-teal-400 hover:text-teal-500' : 'text-white hover:text-blue-600'} cursor-pointer `}
                                 type="button"
                             >
