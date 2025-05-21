@@ -5,9 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 
 
-interface Props {
-    noche: boolean;
-}
+
 
 export const Feynman = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -30,7 +28,7 @@ export const Feynman = () => {
             }
             setMediaStream(stream);
             setError(null);
-        } catch (err) {
+        } catch  {
             setError('No se pudo acceder a la cámara o al micrófono.');
         }
     };
