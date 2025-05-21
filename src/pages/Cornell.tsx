@@ -33,7 +33,7 @@ export const Cornell = () => {
         {/* TITULO */}
         <label
           htmlFor="titulo"
-          className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-200' : 'text-gray-800'}`}
+          className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-400' : 'text-gray-800'}`}
         >
           TITULO
         </label>
@@ -52,7 +52,7 @@ export const Cornell = () => {
         <div className="flex flex-col md:flex-row gap-4 mt-4">
           {/* IDEAS PRINCIPALES */}
           <div className="w-full md:w-1/2">
-            <label htmlFor="ideas-principales" className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-200' : 'text-gray-800'}`}>
+            <label htmlFor="ideas-principales" className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-400' : 'text-gray-800'}`}>
               IDEAS PRINCIPALES
             </label>
             <textarea
@@ -69,7 +69,7 @@ export const Cornell = () => {
 
           {/* NOTAS DE CLASE */}
           <div className="w-full md:w-1/2">
-            <label htmlFor="notas-clase" className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-200' : 'text-gray-800'}`}>
+            <label htmlFor="notas-clase" className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-400' : 'text-gray-800'}`}>
               NOTAS DE CLASE
             </label>
             <textarea
@@ -88,7 +88,7 @@ export const Cornell = () => {
         {/* RESUMEN */}
         <label
           htmlFor="resumen"
-          className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-200' : 'text-gray-800'}`}
+          className={`block mb-2 text-sm font-medium ${noche ? 'text-teal-400' : 'text-gray-800'}`}
         >
           RESUMEN
         </label>
