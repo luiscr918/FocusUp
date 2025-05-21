@@ -24,7 +24,7 @@ export const Pomodoro = ({ tarea = '' }: Props) => {
             {noche && <NightSky />}
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
-            <IconoComponent noche={noche} />
+            <IconoComponent noche={noche} nombre="Pomodoro" />
             {(nombre === '')
                 ? (<ModalTarea closeModalTarea={volverHome} guardarNombre={setNombre} />)
                 : (<TempPomodoro tarea={nombre} setNombre={setNombre} noche={noche} />)

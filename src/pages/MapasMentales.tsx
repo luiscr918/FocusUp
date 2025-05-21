@@ -6,7 +6,6 @@ import { IconoComponent } from "../components/IconoComponent";
 
 
 
-
 export const MapasMentales = () => {
     const [noche, setNoche] = useState(false);
 
@@ -15,7 +14,7 @@ export const MapasMentales = () => {
             {noche && <NightSky />}
             {/* Barra de navegacion */}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
-            <IconoComponent noche={noche}/>
+            <IconoComponent noche={noche} nombre="Mapas Mentales"/>
             {/* Contenido de la pagina */}
             <section className="py-24">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
