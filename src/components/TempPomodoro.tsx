@@ -139,7 +139,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
             </div>
             {mostrarModal && (
                 <div className="fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50">
-                    <div className={`bwhite p-8 shadow-lg text-Black border-4 border-white ${noche ? 'bg-gray-800' : 'cielo_animado_elementos'}`}>
+                    <div className={`bwhite p-8 shadow-lg text-Black border-2 border-white ${noche ? 'bg-gray-800' : 'cielo_animado_elementos'}`}>
                         <h2 className={`text-2xl mb-4 ${noche ? 'text-white' : 'text-white'}`}>¿La tarea está terminada?</h2>
                         <button
                             className={`text-white px-4 py-2 rounded mr-2  ${noche ? 'bg-gray-400' : 'bg-blue-400'}`}
@@ -168,7 +168,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
             )}
             {mostrarFelicitacion && (
                 <div className={`fixed inset-0 flex justify-center items-center backdrop-blur-xl z-50 `}>
-                    <div className={`bwhite text-Black border-4 border-white p-8 rounded shadow-lg text-black ${noche ? 'bg-gray-800' : 'cielo_animado_elementos'} `}>
+                    <div className={`bwhite text-Black border-2 border-white p-8 rounded shadow-lg text-black ${noche ? 'bg-gray-800' : 'cielo_animado_elementos'} `}>
                         <h2 className="text-2xl mb-4 text-white">¡Felicitaciones!</h2>
                         <p className="text-white text-xl">Has completado tu tarea con éxito.</p>
                         <div className="flex justify-center gap-4 mt-4">
