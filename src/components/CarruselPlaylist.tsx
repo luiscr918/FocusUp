@@ -14,7 +14,7 @@ export const CarruselPlaylist = ({ oscuro }: Props) => {
       playlistUrl: "https://open.spotify.com/playlist/5YKm5Zt0AUdKrlrvWzUV6l?si=69d0b98ad5ec4ab5",
     },
     {
-      src: "https://images.unsplash.com/photo-1497989462347-f3fdb55caa59?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMzc2Mjd8fGVufDB8fHx8fA%3D%3D",
+      src: "https://wallpapers.com/images/hd/cool-moon-bttwowcloeskvehr.jpg",
       name: 'Ambient Relaxation',
       playlistUrl: "https://open.spotify.com/playlist/5q4mxhDt3n9xG4t7d0oM3Y?si=175525828da7440f",
     },
