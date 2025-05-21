@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Navegacion } from "../components/Navegacion";
 import { NightSky } from "../components/NightSky";
 import Footer from "../components/Footer";
-import { useReactToPrint } from "react-to-print";
+import { useReactToPrint }  from "react-to-print"; 
 
 export const Cornell = () => {
   const [noche, setNoche] = useState(false);
