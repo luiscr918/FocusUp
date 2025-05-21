@@ -76,7 +76,7 @@ export const Feynman = () => {
 
         const stream = mediaStream || (videoRef.current?.srcObject as MediaStream);
         if (stream) {
-            let localChunks: Blob[] = [];
+            const localChunks: Blob[] = [];
             const recorder = new MediaRecorder(stream);
             mediaRecorderRef.current = recorder;
 
