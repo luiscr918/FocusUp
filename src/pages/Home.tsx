@@ -30,7 +30,7 @@ export const Home = () => {
         <p className={`mb-6 text-lg font-normal  lg:text-xl sm:px-16 xl:px-48 ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Organiza tu tiempo, potencia tu aprendizaje y alcanza tus metas con métodos probados. ¿Listo para concentrarte de verdad?</p>
         <button
           onClick={abrirModal}
-          className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'} `}>
+          className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'} cursor-pointer `}>
           Comenzar Ahora
         </button>
         <img src="/src/assets/imgs/logoSinFondo.png" alt="icono de FocusUp" />

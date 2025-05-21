@@ -93,7 +93,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                             setCrono(true);
                             setPausado(false);
                         }}
-                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-green-400' : 'bg-sky-400'}`}
+                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-green-400' : 'bg-sky-400'} cursor-pointer`}
                     >
                         Comenzar
                     </button>
@@ -104,7 +104,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                             setCrono(true);
                             setPausado(false);
                         }}
-                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-cyan-300' : 'bg-green-500'} `}
+                        className={`text-white  px-4 py-2 rounded mr-2 ${noche ? 'bg-cyan-300' : 'bg-green-500'}cursor-pointer`}
                     >
                         Reanudar
                     </button>
@@ -115,7 +115,7 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                             setCrono(false);
                             setPausado(true);
                         }}
-                        className="text-white bg-fuchsia-300 px-4 py-2 rounded mr-2"
+                        className="text-white bg-fuchsia-300 px-4 py-2 rounded mr-2 cursor-pointer"
                     >
                         Pausar
                     </button>
@@ -126,13 +126,13 @@ export const TempPomodoro = ({ tarea, setNombre, noche }: Props) => {
                         setPausado(false);
                         setTiempo(enDescanso ? 5 * 60 : 25 * 60);
                     }}
-                    className="text-white bg-violet-500 px-4 py-2 rounded mr-2"
+                    className="text-white bg-violet-500 px-4 py-2 rounded mr-2 cursor-pointer"
                 >
                     Reiniciar
                 </button>
                 <button
                     onClick={terminarCiclo}
-                    className="text-white bg-rose-400 px-4 py-2 rounded"
+                    className="text-white bg-rose-400 px-4 py-2 rounded cursor-pointer"
                 >
                     Terminar Ciclo
                 </button>

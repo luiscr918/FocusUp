@@ -58,7 +58,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     <li className="relative group text-center">
                         <button
                             onClick={toggleDropdown}
-                            className="flex items-center justify-center hover:text-gray-400"
+                            className="flex items-center justify-center hover:text-gray-400 cursor-pointer"
                         >
                             Técnicas
                             <svg
