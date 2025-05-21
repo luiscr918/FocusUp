@@ -3,10 +3,6 @@ import { Navegacion } from "../components/Navegacion";
 import Footer from "../components/Footer";
 import { useEffect, useRef, useState } from "react";
 
-
-
-
-
 export const Feynman = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -19,6 +15,7 @@ export const Feynman = () => {
     const [error, setError] = useState<string | null>(null);
     const [noche, setNoche] = useState(false);
     const [solicitarPermiso, setSolicitarPermiso] = useState(false);
+
     // Encender cámara
     const turnOnCamera = async () => {
         try {
@@ -28,7 +25,7 @@ export const Feynman = () => {
             }
             setMediaStream(stream);
             setError(null);
-        } catch  {
+        } catch {
             setError('No se pudo acceder a la cámara o al micrófono.');
         }
     };
@@ -43,6 +40,7 @@ export const Feynman = () => {
             }
         }
     };
+
     useEffect(() => {
         if (solicitarPermiso) {
             (async () => {
@@ -51,6 +49,7 @@ export const Feynman = () => {
             })();
         }
     }, [solicitarPermiso]);
+
     useEffect(() => {
         if (!mediaStream) {
             turnOnCamera();
@@ -64,6 +63,7 @@ export const Feynman = () => {
                 URL.revokeObjectURL(videoPreviewURL);
             }
         };
+    // eslint-disable-next-line
     }, []);
 
     const startRecording = async () => {
@@ -143,17 +143,14 @@ export const Feynman = () => {
         setError(null);
         setSolicitarPermiso(true);
         setTaskName('');
-
     };
 
     return (
-        <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
+        <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'} min-h-screen`}>
             {noche && <NightSky />}
-
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
             <div
-                className={`${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'} max-w-xl mx-auto p-8 rounded-xl w-600 border-2`}
-
+                className={`${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'} max-w-2xl w-full mx-auto p-4 sm:p-6 md:p-8 rounded-xl border-2 mt-6`}
             >
                 <input
                     type="text"
@@ -169,11 +166,12 @@ export const Feynman = () => {
                     }}
                     disabled={recording}
                     className={`block p-2.5 w-full text-sm rounded-lg border resize-none
-            ${noche
+                        ${noche
                             ? "bg-gray-600 text-white placeholder-gray-50 border-gray-100"
                             : "bg-gray-50 text-gray-900 border-gray-300"
                         } 
-          `} aria-label="Ingrese el nombre de la tarea"
+                    `}
+                    aria-label="Ingrese el nombre de la tarea"
                 />
                 {taskName && (
                     <h2 className={`block mb-2 text-sm font-medium ${noche ? "text-teal-400" : "text-gray-800"}`}>
@@ -183,28 +181,40 @@ export const Feynman = () => {
 
                 {error && <div className="mb-4 text-red-600 font-medium">{error}</div>}
 
-                <div className="mb-flex flex-col md:flex-row gap-4 mt-4">
-                    {mediaStream && (
-                        <video
-                            ref={videoRef}
-                            autoPlay
-                            playsInline
-                            muted
-                            width={640}
-                            height={480}
-                            className="w-full max-w-xl rounded-lg border border-gray-300 bg-black mb-5"
-                        />
-                    )}
-
-
-                    <div className="w-full flex flex-col items-center justify-center mb-6">
-                        <div className="grid grid-cols-3 gap-4">
+                <div className="flex flex-col md:flex-row gap-4 mt-4">
+                    <div className="w-full md:w-2/3 flex flex-col items-center">
+                        {mediaStream && (
+                            <video
+                                ref={videoRef}
+                                autoPlay
+                                playsInline
+                                muted
+                                width={640}
+                                height={480}
+                                className="w-full max-w-full rounded-lg border border-gray-300 bg-black mb-5 aspect-video"
+                            />
+                        )}
+                        {videoPreviewURL && (
+                            <div className="mt-6 w-full">
+                                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Vista previa de la grabación:</h3>
+                                <video
+                                    src={videoPreviewURL}
+                                    controls
+                                    width={640}
+                                    height={480}
+                                    className="w-full max-w-full rounded-lg border border-gray-300 aspect-video"
+                                />
+                            </div>
+                        )}
+                    </div>
+                    <div className="w-full md:w-1/3 flex flex-col items-center justify-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 w-full">
                             <button
                                 type="button"
                                 onClick={startRecording}
                                 disabled={recording || !taskName}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-red-500 rounded-full font-semibold text-white bg-red-500 shadow transition cursor-pointer
-        ${recording || !taskName
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-red-500 rounded-full font-semibold text-white bg-red-500 shadow transition cursor-pointer
+                                    ${recording || !taskName
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-red-600'
                                     }`}
@@ -219,8 +229,8 @@ export const Feynman = () => {
                                 type="button"
                                 onClick={pauseRecording}
                                 disabled={!recording || paused}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-yellow-400 rounded-full font-semibold text-yellow-900 bg-yellow-300 shadow transition cursor-pointer
-        ${!recording || paused
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-yellow-400 rounded-full font-semibold text-yellow-900 bg-yellow-300 shadow transition cursor-pointer
+                                    ${!recording || paused
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-yellow-400'
                                     }`}
@@ -234,13 +244,12 @@ export const Feynman = () => {
                                 <span className="text font-medium">Pausar</span>
                             </button>
 
-
                             <button
                                 type="button"
                                 onClick={resumeRecording}
                                 disabled={!recording || !paused}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-green-500 rounded-full font-semibold text-white bg-green-500 shadow transition cursor-pointer
-        ${!recording || !paused
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-green-500 rounded-full font-semibold text-white bg-green-500 shadow transition cursor-pointer
+                                    ${!recording || !paused
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-green-600'
                                     }`}
@@ -255,8 +264,8 @@ export const Feynman = () => {
                                 type="button"
                                 onClick={stopRecording}
                                 disabled={!recording}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-gray-700 rounded-full font-semibold text-white bg-gray-700 shadow transition cursor-pointer
-        ${!recording
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-gray-700 rounded-full font-semibold text-white bg-gray-700 shadow transition cursor-pointer
+                                    ${!recording
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-gray-800'
                                     }`}
@@ -271,8 +280,8 @@ export const Feynman = () => {
                                 type="button"
                                 onClick={downloadRecording}
                                 disabled={recordedChunks.length === 0}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-blue-500 rounded-full font-semibold text-white bg-blue-500 shadow transition cursor-pointer
-        ${recordedChunks.length === 0
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-blue-500 rounded-full font-semibold text-white bg-blue-500 shadow transition cursor-pointer
+                                    ${recordedChunks.length === 0
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-blue-600'
                                     }`}
@@ -290,8 +299,8 @@ export const Feynman = () => {
                                 type="button"
                                 onClick={resetRecording}
                                 disabled={recording && !videoPreviewURL}
-                                className={`flex items-center gap-2 justify-center min-w-[150px] px-6 py-2 border-2 border-violet-500 rounded-full font-semibold text-violet-700 bg-violet-100 shadow transition cursor-pointer
-        ${(recording && !videoPreviewURL)
+                                className={`flex items-center gap-2 justify-center w-full px-4 py-2 border-2 border-violet-500 rounded-full font-semibold text-violet-700 bg-violet-100 shadow transition cursor-pointer
+                                    ${(recording && !videoPreviewURL)
                                         ? 'opacity-60 cursor-not-allowed'
                                         : 'hover:bg-violet-200'
                                     }`}
@@ -309,27 +318,12 @@ export const Feynman = () => {
                             </button>
                         </div>
                     </div>
-                    {videoPreviewURL && (
-                        <div className="mt-6">
-                            <h3 className="text-xl font-semibold mb-3 text-gray-800">Vista previa de la grabación:</h3>
-                            <video
-                                src={videoPreviewURL}
-                                controls
-                                width={640}
-                                height={480}
-                                className="w-full max-w-xl rounded-lg border border-gray-300"
-                            />
-                        </div>
-                    )}
                 </div>
-
             </div>
-            <div className="flex just">
+            <div className="flex">
                 <Footer isChecked={noche} />
             </div>
-
         </div>
-
     );
-}
+};
 export default Feynman;
