@@ -21,7 +21,7 @@ const tecnicas: Nav[] = [
     { name: 'Pomodoro', link: '/pomodoro' },
     { name: 'Feynman', link: '/feynman' },
     { name: 'Cornell', link: '/cornell' },
-    { name: 'Mapas Mentales', link: 'mapas-mentales' },
+    { name: 'Mapas Mentales', link: '/mapas-mentales' },
 ];
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
