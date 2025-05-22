@@ -2,6 +2,7 @@ import { NightSky } from "../components/NightSky";
 import { Navegacion } from "../components/Navegacion";
 import Footer from "../components/Footer";
 import { useEffect, useRef, useState } from "react";
+import { IconoComponent } from "../components/IconoComponent";
 
 export const Feynman = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -149,6 +150,7 @@ export const Feynman = () => {
         <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'} min-h-screen`}>
             {noche && <NightSky />}
             <Navegacion isChecked={noche} setIsChecked={setNoche} />
+            <IconoComponent noche={noche} nombre="Feynman" />
             <div
                 className={`${noche ? 'night_no_stars text-white border-gray-500' : 'cielo_animado_elementos text-black border-white'} max-w-2xl w-full mx-auto p-4 sm:p-6 md:p-8 rounded-xl border-2 mt-6`}
             >
