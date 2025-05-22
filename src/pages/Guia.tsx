@@ -40,8 +40,8 @@ export const Guia = () => {
         <p>error</p>
       ) : (
         <div>
-          <p>{nombre}</p>
-          <p>{definicion}</p>
+          <p className="text-white text-center text-2xl">{nombre}</p>
+          <p className="text-black text-center text-2xl">{definicion}</p><br />
           {/* pasos */}
 <GuiaComponent nombre={nombre} noche={noche}/>
         </div>
