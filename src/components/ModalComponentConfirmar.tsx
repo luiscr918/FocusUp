@@ -114,7 +114,6 @@ export const ModalComponentConfirmar = ({ nombre, openModal, closeModal, abirPri
                             >
                                 IR AHORA
                             </button>
-                           
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ interface Props{
 
 export const PasosFeyman = ({noche} : Props) => {
   return (
-    <div>PasosFeyman</div>
+    <div>
+      PasosFeyman - Noche: {noche ? 'Sí' : 'No'}
+    </div>
   )
 }
