@@ -5,7 +5,7 @@ import "../styles/fondosMain.css";
 import { useState } from "react";
 import { Navegacion } from '../components/Navegacion';
 import { ModalHomeComponent } from "../components/ModalHomeComponent";
-
+import logoEmpresa from "../assets/imgs/logoSinFondo.png";
 
 
 export const Home = () => {
@@ -33,7 +33,7 @@ export const Home = () => {
           className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'} cursor-pointer `}>
           Comenzar Ahora
         </button>
-        <img src="/src/assets/imgs/logoSinFondo.png" alt="icono de FocusUp" />
+        <img src={logoEmpresa} alt="icono de FocusUp" />
       </div>
       {/*Modal Seleccion de Tecnicas */}
       {showModal && <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche} abrirModalOtraPag={abrirModal} />}

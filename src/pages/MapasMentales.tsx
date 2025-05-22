@@ -3,8 +3,18 @@ import { NightSky } from "../components/NightSky";
 import { Navegacion } from "../components/Navegacion";
 import Footer from "../components/Footer";
 import { IconoComponent } from "../components/IconoComponent";
-
-
+import mapa1 from "../assets/imgs/3.png";
+import mapa2 from "../assets/imgs/2.png";
+import mapa3 from "../assets/imgs/1.png";
+import mapa4 from "../assets/imgs/4.png";
+import mapa5 from "../assets/imgs/5.png";
+import mapa6 from "../assets/imgs/6.png";
+import mapa7 from "../assets/imgs/7.png";
+import mapa8 from "../assets/imgs/8.png";
+import mapa9 from "../assets/imgs/9.png";
+import mapa10 from "../assets/imgs/10.png";
+import mapa11 from "../assets/imgs/11.png";
+import mapa12 from "../assets/imgs/12.png";
 
 export const MapasMentales = () => {
     const [noche, setNoche] = useState(false);
@@ -24,7 +34,7 @@ export const MapasMentales = () => {
                         target="_blank"
                             rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-xl object-cover group-hover:scale-140 transition-transform duration-300" src="src/assets/imgs/3.png" alt="Jacket image" />
+                            <img className="rounded-xl object-cover group-hover:scale-140 transition-transform duration-300" src={mapa1} alt="mapa1" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -37,7 +47,7 @@ export const MapasMentales = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/2.png" alt="Blazer image" />
+                            <img className="rounded-xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa2}  alt="mapa2" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -50,7 +60,7 @@ export const MapasMentales = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/1.png" alt="printed top image" />
+                            <img className="rounded-xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa3}  alt="mapa3" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -66,8 +76,8 @@ export const MapasMentales = () => {
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
                             <img
                                 className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
-                                src="src/assets/imgs/4.png"
-                                alt="Denim jacket image"
+                                src={mapa4} 
+                                alt="mapa4"
                             />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
@@ -84,7 +94,7 @@ export const MapasMentales = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/5.png" alt="Jacket image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa5}  alt="mapa5" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -97,7 +107,7 @@ export const MapasMentales = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/6.png" alt="Blazer image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa6}  alt="mapa6" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -110,7 +120,7 @@ export const MapasMentales = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/7.png" alt="printed top image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa7}  alt="mapa7" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -126,8 +136,8 @@ export const MapasMentales = () => {
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
                             <img
                                 className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
-                                src="src/assets/imgs/8.png"
-                                alt="Denim jacket image"
+                                src={mapa8} 
+                                alt="mapa8"
                             />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
@@ -144,7 +154,7 @@ export const MapasMentales = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/9.png" alt="Jacket image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa9}  alt="mapa9" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -157,7 +167,7 @@ export const MapasMentales = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/10.png" alt="Blazer image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa10}  alt="mapa10" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -170,7 +180,7 @@ export const MapasMentales = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:mr-0 xl:mx-auto cursor-pointer">
-                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src="src/assets/imgs/11.png" alt="printed top image" />
+                            <img className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300" src={mapa11}  alt="mapa11" />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">
                                     <button className={`sm:w-fit w-full px-3.5 py-2  transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'}`}>
@@ -185,8 +195,8 @@ export const MapasMentales = () => {
                             className="relative bg-cover group rounded-3xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto cursor-pointer">
                             <img
                                 className="rounded-2xl object-cover group-hover:scale-110 transition-transform duration-300"
-                                src="src/assets/imgs/12.png"
-                                alt="Denim jacket image"
+                                src={mapa12} 
+                                alt="mapa12"
                             />
                             <div className="absolute z-10 bottom-3 left-0 mx-3 p-3 w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500">
                                 <div className="flex items-center justify-center mb-2">

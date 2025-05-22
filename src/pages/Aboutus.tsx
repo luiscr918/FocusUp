@@ -3,7 +3,7 @@ import { Navegacion } from "../components/Navegacion";
 import { NightSky } from "../components/NightSky";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-
+import logoEmpresa from "../assets/imgs/logoSinFondo.png";
 export const Aboutus = () => {
     const [noche, setNoche] = useState(false);
     return (
@@ -25,7 +25,7 @@ export const Aboutus = () => {
                                 <Link to="/">Ir al Inicio</Link>
                             </button>
                         </div>
-                        <img className="lg:mx-0 mx-auto h-full rounded-3xl object-cover" src="/src/assets/imgs/logoSinFondo.png" alt="about Us image" />
+                        <img className="lg:mx-0 mx-auto h-full rounded-3xl object-cover" src={logoEmpresa} alt="about Us image" />
                     </div>
                 </div>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
