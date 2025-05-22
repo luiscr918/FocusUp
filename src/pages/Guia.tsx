@@ -40,10 +40,14 @@ export const Guia = () => {
         <p>error</p>
       ) : (
         <div>
-          <p>nombre:{nombre}</p>
-          <p>descripcion{definicion}</p>
+          <div className="bg-white/80 rounded-xl shadow-lg p-6 max-w-2xl mx-auto mb-6">
+            <p className={`${noche ? "text-white" : "text-gray-800"} text-center text-3xl font-bold`}>
+              {nombre}
+            </p>
+            <p className={`${noche ? "text-teal-600" : "text-gray-800"} text-center text-xl mt-2`}>{definicion}</p>
+          </div>
           {/* pasos */}
-<GuiaComponent nombre={nombre} noche={noche}/>
+          <GuiaComponent nombre={nombre} noche={noche} />
         </div>
       )}
       <Footer isChecked={noche} />
