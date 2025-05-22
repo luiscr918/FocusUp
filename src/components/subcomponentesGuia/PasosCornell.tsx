@@ -1,8 +1,6 @@
-interface Props{
-    noche: boolean;
-}
 
-export const PasosCornell = ({noche}:Props) => {
+
+export const PasosCornell = () => {
   return (
     <div  className="text-white text-center text-2xl">
       <p >¿Como Utilizar<strong> CORNELL</strong>?</p><br />

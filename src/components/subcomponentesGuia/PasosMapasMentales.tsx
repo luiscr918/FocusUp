@@ -1,8 +1,5 @@
-interface Props{
-    noche: boolean;
-}
 
-export const PasosMapasMentales = ({noche}: Props) => {
+export const PasosMapasMentales = () => {
   return (
     <div  className="text-white text-center text-2xl">
       <p >¿Como Utilizar<strong> MAPAS MENTALES</strong>?</p><br />

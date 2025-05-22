@@ -2,29 +2,29 @@
 import { PasosCornell } from "./subcomponentesGuia/PasosCornell";
 import { PasosFeyman } from "./subcomponentesGuia/PasosFeyman";
 import { PasosMapasMentales } from "./subcomponentesGuia/PasosMapasMentales";
-import { PasosPomodoro } from "./subcomponentesGuia/pasosPomodoro";
+import { PasosPomodoro } from "./subcomponentesGuia/PasosPomodoro";
+
 
 
 interface Props {
     nombre: string;
-    noche: boolean;
 }
 
-export const GuiaComponent = ({ nombre, noche }: Props) => {
+export const GuiaComponent = ({ nombre}: Props) => {
    
 const definirPasos=()=>{
         switch (nombre) {
             case 'Pomodoro':
-return (<PasosPomodoro noche={noche} />)
+return (<PasosPomodoro  />)
             case 'Feynman':
                 
-return(<PasosFeyman noche={noche} /> )
+return(<PasosFeyman /> )
             case 'Cornell':
                 
-return(<PasosCornell noche={noche} /> )
+return(<PasosCornell  /> )
             case 'Mapas Mentales':
                 
-return(<PasosMapasMentales noche={noche} /> )
+return(<PasosMapasMentales  /> )
 
             default:
                 console.log('No se ha encontrado la técnica');

@@ -47,7 +47,7 @@ export const Guia = () => {
             <p className={`${noche ? "text-teal-600" : "text-gray-800"} text-center text-xl mt-2`}>{definicion}</p>
           </div>
           {/* pasos */}
-          <GuiaComponent nombre={nombre} noche={noche} />
+          <GuiaComponent nombre={nombre} />
         </div>
       )}
       <Footer isChecked={noche} />

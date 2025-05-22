@@ -1,8 +1,6 @@
-interface Props{
-    noche: boolean;
-}
 
-export const PasosPomodoro = ({noche}:Props) => {
+
+export const PasosPomodoro = () => {
   return (
     <div className="text-white text-center text-2xl">
         <p >¿Como Utilizar <strong>POMODORO</strong>?</p><br />
