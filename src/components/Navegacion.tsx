@@ -1,4 +1,4 @@
-import { FaSpotify } from 'react-icons/fa'; // Importa el ícono de Spotify
+import { FaSpotify } from 'react-icons/fa';
 import { ToogleComponent } from './ToogleComponent';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -27,20 +27,40 @@ const tecnicas: Nav[] = [
 
 export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => !prev);
-    };
+    const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
     return (
-        <nav className="p-4 text-white">
+        <nav className="p-4 text-white relative z-50">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
                 {/* Logo */}
                 <div className="text-2xl font-bold flex-shrink-0">FocusUp</div>
 
+                {/* Botón hamburguesa */}
+                <button
+                    className="md:hidden flex items-center px-3 py-2 border rounded text-white border-white"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <svg className="fill-current h-6 w-6" viewBox="0 0 20 20">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+
                 {/* Menú principal */}
-                <ul className="flex flex-wrap items-center justify-center space-x-4 md:space-x-8">
-                    {/* Inicio y Sobre Nosotros */}
+                <ul
+                    className={
+                        [
+                            "flex-col md:flex-row md:flex md:items-center md:justify-center",
+                            "space-y-4 md:space-y-0 space-x-0 md:space-x-8",
+                            isMobileMenuOpen
+                                ? `flex ${isChecked ? 'night_no_stars' : 'cielo_animado_elementos'}`
+                                : "hidden",
+                            "md:flex",
+                            "absolute md:static top-16 left-0 w-full md:w-auto z-40 p-4 md:p-0 rounded-b-lg md:rounded-none"
+                        ].join(" ")
+                    }
+                >
                     {navV.map((item) => (
                         <li
                             key={item.name}
@@ -61,7 +81,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     <li className="relative group text-center">
                         <button
                             onClick={toggleDropdown}
-                            className="flex items-center justify-center hover:text-gray-400 cursor-pointer"
+                            className="flex items-center justify-center hover:text-gray-400 cursor-pointer w-full"
                         >
                             Técnicas
                             <svg
@@ -97,7 +117,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                     </li>
 
                     {/* Ícono de Spotify */}
-                    <li className="flex-shrink-0">
+                    <li className="flex-shrink-0 flex justify-center">
                         <Link
                             to="/spotify"
                             rel="noopener noreferrer"
@@ -112,7 +132,6 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                 <div>
                     <ToogleComponent
                         isChecked={isChecked}
-
                         setIsChecked={setIsChecked}
                     />
                 </div>
