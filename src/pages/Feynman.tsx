@@ -17,6 +17,11 @@ export const Feynman = () => {
     const [noche, setNoche] = useState(false);
     const [solicitarPermiso, setSolicitarPermiso] = useState(false);
 
+    useEffect(() => {
+        if (videoRef.current && mediaStream) {
+            videoRef.current.srcObject = mediaStream;
+        }
+    }, [mediaStream]);
     // Encender cámara
     const turnOnCamera = async () => {
         try {
@@ -64,7 +69,7 @@ export const Feynman = () => {
                 URL.revokeObjectURL(videoPreviewURL);
             }
         };
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
     const startRecording = async () => {
