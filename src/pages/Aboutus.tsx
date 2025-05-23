@@ -64,7 +64,7 @@ export const Aboutus = () => {
                         <div className="flex items-center gap-x-6">
                             <div>
                                 <h3 className={`text-base/7 font-semibold tracking-tight ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Luis Castillo</h3>
-                                <p className="text-sm/6 font-semibold text-white">Scrum Master</p>
+                                <p className="text-sm/6 font-semibold text-white">Líder del Proyecto / Desarrollador</p>
                             </div>
                         </div>
                     </li>
