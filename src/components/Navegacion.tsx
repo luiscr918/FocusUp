@@ -15,6 +15,7 @@ interface Props {
 const navV: Nav[] = [
     { name: 'Inicio', link: '/' },
     { name: 'Sobre Nosotros', link: '/sobre-nosotros' },
+    { name: '❤️Apoya mi trabajo', link: 'https://ko-fi.com/luiscr918' },
 ];
 
 const tecnicas: Nav[] = [
@@ -48,6 +49,8 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                             <a
                                 href={item.link}
                                 className="block py-2"
+                                target={item.name === '❤️Apoya mi trabajo' ? "_blank" : undefined}
+                                rel={item.name === '❤️Apoya mi trabajo' ? "noopener noreferrer" : undefined}
                             >
                                 {item.name}
                             </a>
@@ -70,16 +73,16 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                         </button>
                         <ul
                             className={`absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 mt-2 ${isChecked
-                                    ? 'bg-gray-800 text-gray-200 night_no_stars'
-                                    : 'bg-blue-100 text-gray-800 cielo_animado_elementos'
+                                ? 'bg-gray-800 text-gray-200 night_no_stars'
+                                : 'bg-blue-100 text-gray-800 cielo_animado_elementos'
                                 } shadow-lg w-full lg:w-56 ${isDropdownOpen ? 'block' : 'hidden'}`}
                         >
                             {tecnicas.map((tech) => (
                                 <li
                                     key={tech.name}
                                     className={`p-3 rounded-lg text-center transition duration-300 ${isChecked
-                                            ? 'hover:bg-gray-700'
-                                            : 'hover:bg-blue-200'
+                                        ? 'hover:bg-gray-700'
+                                        : 'hover:bg-blue-200'
                                         }`}
                                 >
                                     <a
@@ -109,7 +112,7 @@ export const Navegacion = ({ isChecked, setIsChecked }: Props) => {
                 <div>
                     <ToogleComponent
                         isChecked={isChecked}
-                        
+
                         setIsChecked={setIsChecked}
                     />
                 </div>
