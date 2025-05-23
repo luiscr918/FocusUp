@@ -2,7 +2,11 @@
 import "../styles/fondosMain.css";
 
 export const NightSky = () => {
-  const stars = Array.from({ length: 20 }, (_, i) => (
+  // Detecta si es móvil
+  const isMobile = window.innerWidth < 768;
+  const numStars = isMobile ? 4 : 20;
+
+  const stars = Array.from({ length: numStars }, (_, i) => (
     <div key={i} className="shooting_star"></div>
   ));
 
