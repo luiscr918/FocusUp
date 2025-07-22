@@ -1,12 +1,10 @@
-
-
 import { NightSky } from "../components/NightSky";
 import "../styles/fondosMain.css";
 import { useState } from "react";
-import { Navegacion } from '../components/Navegacion';
+import { Navegacion } from "../components/Navegacion";
 import { ModalHomeComponent } from "../components/ModalHomeComponent";
 import logoEmpresa from "../assets/imgs/logoSinFondo.png";
-
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const [noche, setNoche] = useState(false);
@@ -18,26 +16,57 @@ export const Home = () => {
   const cerrarModal = () => {
     setShowModal(false);
   };
+  const navigate = useNavigate();
   return (
     /*  Div principal  */
-    <div className={`${noche ? 'cuerpo_noche' : 'cielo_animado'}`}>
+    <div className={`${noche ? "cuerpo_noche" : "cielo_animado"}`}>
       {noche && <NightSky />}
       {/* Barra de navegacion */}
       <Navegacion isChecked={noche} setIsChecked={setNoche} />
       {/*Heading Principal */}
       <div className="container mx-auto flex flex-col items-center justify-center h-screen text-center ">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight  md:text-5xl lg:text-6xl text-white">MEJORA TU ENFOQUE EN EL ESTUDIO</h1>
-        <p className={`mb-6 text-lg font-normal  lg:text-xl sm:px-16 xl:px-48 ${noche ? 'text-teal-200' : 'text-gray-800'}`}>Organiza tu tiempo, potencia tu aprendizaje y alcanza tus metas con métodos probados. ¿Listo para concentrarte de verdad?</p>
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight  md:text-5xl lg:text-6xl text-white">
+          MEJORA TU ENFOQUE EN EL ESTUDIO
+        </h1>
+        <p
+          className={`mb-6 text-lg font-normal  lg:text-xl sm:px-16 xl:px-48 ${
+            noche ? "text-teal-200" : "text-gray-800"
+          }`}
+        >
+          Organiza tu tiempo, potencia tu aprendizaje y alcanza tus metas con
+          métodos probados. ¿Listo para concentrarte de verdad?
+        </p>
         <button
           onClick={abrirModal}
-          className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${noche ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-teal-400 hover:bg-teal-500'} cursor-pointer `}>
+          className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${
+            noche
+              ? "bg-cyan-400 hover:bg-cyan-500"
+              : "bg-teal-400 hover:bg-teal-500"
+          } cursor-pointer `}
+        >
           Comenzar Ahora
+        </button>
+        <button
+          onClick={() => navigate("login-editor")}
+          className={`inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 ${
+            noche
+              ? "bg-cyan-400 hover:bg-cyan-500"
+              : "bg-teal-400 hover:bg-teal-500"
+          } cursor-pointer `}
+        >
+          Ir Fechas
         </button>
         <img src={logoEmpresa} alt="icono de FocusUp" />
       </div>
       {/*Modal Seleccion de Tecnicas */}
-      {showModal && <ModalHomeComponent showModal={showModal} cerrarModal={cerrarModal} noche={noche} abrirModalOtraPag={abrirModal} />}
+      {showModal && (
+        <ModalHomeComponent
+          showModal={showModal}
+          cerrarModal={cerrarModal}
+          noche={noche}
+          abrirModalOtraPag={abrirModal}
+        />
+      )}
     </div>
   );
 };
-

@@ -8,6 +8,7 @@ import { MapasMentales } from "./pages/MapasMentales"
 import { Aboutus } from "./pages/Aboutus"
 import { Spotify } from "./pages/Spotify"
 import { Guia } from "./pages/Guia"
+import { Login } from "./components/Login"
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/sobre-nosotros" element={<Aboutus />} />
       <Route path="/spotify" element={<Spotify />} />
       <Route path="/guia/:nombre" element={<Guia />} />
+      <Route path="/login-editor" element={<Login />} />
     </Routes>
 
   )
